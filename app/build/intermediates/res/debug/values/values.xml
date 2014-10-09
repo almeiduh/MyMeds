@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <attr name="actionBarDivider" format="reference" />
@@ -508,23 +508,23 @@
     <dimen name="abc_panel_menu_list_width">296dp</dimen>
     <dimen name="abc_search_view_preferred_width">320dip</dimen>
     <dimen name="abc_search_view_text_min_width">160dip</dimen>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="navigation_drawer_width">240dp</dimen>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="action_bar_activity_content" type="id"/>
@@ -549,7 +549,7 @@
     <string name="abc_searchview_description_voice">Voice search</string>
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string name="action_example">Example action</string>
@@ -557,10 +557,9 @@
     <string name="app_name">MyMeds</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/styles.xml -->
+    <string name="title_section1">Main Menu</string>
+    <string name="title_section2">List</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
@@ -574,7 +573,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">

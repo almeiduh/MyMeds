@@ -246,17 +246,16 @@ int id action_bar_root 0x7f07001a
 int id action_bar_subtitle 0x7f070023
 int id action_bar_title 0x7f070022
 int id action_context_bar 0x7f07001d
-int id action_example 0x7f070041
+int id action_example 0x7f070044
 int id action_menu_divider 0x7f070015
 int id action_menu_presenter 0x7f070016
 int id action_mode_close_button 0x7f070024
-int id action_settings 0x7f070040
+int id action_settings 0x7f070043
 int id activity_chooser_view_content 0x7f070025
 int id always 0x7f07000f
 int id beginning 0x7f07000a
 int id checkbox 0x7f07002d
 int id collapseActionView 0x7f070011
-int id container 0x7f07003d
 int id default_activity_button 0x7f070028
 int id dialog 0x7f070012
 int id disableHome 0x7f070008
@@ -266,13 +265,18 @@ int id edit_query 0x7f070030
 int id end 0x7f07000c
 int id expand_activities_button 0x7f070026
 int id expanded_menu 0x7f07002c
+int id go_to_list_button 0x7f07003f
 int id home 0x7f070017
 int id homeAsUp 0x7f070005
 int id icon 0x7f07002a
 int id ifRoom 0x7f07000e
 int id image 0x7f070027
 int id listMode 0x7f070001
+int id list_description 0x7f070041
+int id list_icon 0x7f070040
 int id list_item 0x7f070029
+int id list_title 0x7f070042
+int id main_fragment_container 0x7f07003d
 int id middle 0x7f07000b
 int id navigation_drawer 0x7f07003e
 int id never 0x7f07000d
@@ -291,7 +295,6 @@ int id search_mag_icon 0x7f070035
 int id search_plate 0x7f070036
 int id search_src_text 0x7f070037
 int id search_voice_btn 0x7f07003b
-int id section_label 0x7f07003f
 int id shortcut 0x7f07002e
 int id showCustom 0x7f070007
 int id showHome 0x7f070004
@@ -332,7 +335,9 @@ int layout abc_simple_decor 0x7f030017
 int layout activity_main 0x7f030018
 int layout fragment_main 0x7f030019
 int layout fragment_navigation_drawer 0x7f03001a
-int layout support_simple_spinner_dropdown_item 0x7f03001b
+int layout list_fragment 0x7f03001b
+int layout list_item_layout 0x7f03001c
+int layout support_simple_spinner_dropdown_item 0x7f03001d
 int menu global 0x7f0c0000
 int menu main 0x7f0c0001
 int string abc_action_bar_home_description 0x7f0a0000
@@ -355,7 +360,6 @@ int string navigation_drawer_close 0x7f0a0010
 int string navigation_drawer_open 0x7f0a0011
 int string title_section1 0x7f0a0012
 int string title_section2 0x7f0a0013
-int string title_section3 0x7f0a0014
 int style AppBaseTheme 0x7f0b0000
 int style AppTheme 0x7f0b0001
 int style TextAppearance_AppCompat_Base_CompactMenu_Dialog 0x7f0b0002
@@ -570,7 +574,7 @@ int styleable MenuItem_android_title 7
 int styleable MenuItem_android_titleCondensed 8
 int styleable MenuItem_android_visible 4
 int styleable MenuItem_showAsAction 13
-int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x01010435 }
+int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x01010438 }
 int styleable MenuView_android_headerBackground 4
 int styleable MenuView_android_horizontalDivider 2
 int styleable MenuView_android_itemBackground 5

@@ -2,16 +2,28 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-021218c5ab3e1d595540b7632c5ee2ce4bb41a49.jar"
-        jar="C:\Users\Diogo\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-dcd45f1facf9f9731fab7f005247f3a882aac89d.jar"
+        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
     <item
-        dex="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\intermediates\pre-dexed\debug\classes-7ef0b2bbcd0af01fdcda51c3c31b4452cee94a15.jar"
-        jar="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-8c1113e314e07c5a2013215509d271feceb923d4.jar"
+        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-e8b056e57cde11f924082e47aab3da5b808940f3.jar"
+        jar="C:\Users\Diogo\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-82e8a921435745f53da16d54e9fdd969464b9e76.jar"
+        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
 
 </pre-dex-items>
