@@ -8345,6 +8345,11 @@ false
                 qualifiers=""
                 type="layout" />
             <file
+                name="list_fragment"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\list_fragment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="list_item_layout"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\list_item_layout.xml"
                 qualifiers=""
@@ -8374,15 +8379,15 @@ false
                 qualifiers="" >
                 <string name="action_example" >Example action
                 </string>
+                <string name="navigation_drawer_title_list" >List
+                </string>
                 <string name="action_settings" >Settings
                 </string>
                 <string name="app_name" >MyMeds
                 </string>
                 <string name="navigation_drawer_close" >Close navigation drawer
                 </string>
-                <string name="title_section1" >Main Menu
-                </string>
-                <string name="title_section2" >List
+                <string name="navigation_drawer_title_main_menu" >Main Menu
                 </string>
                 <string name="navigation_drawer_open" >Open navigation drawer
                 </string>
@@ -8407,6 +8412,36 @@ false
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
                     -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\themes.xml"
+                qualifiers="" >
+
+                <style
+                    name="MyActionBar"
+                    parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse" >
+                    <item name="android:background">
+@color/material_design_blue
+                    </item>
+
+                    <!-- Support library compatibility -->
+                    <item name="background">
+@color/material_design_blue
+                    </item>
+                </style>
+
+                <style
+                    name="CustomActionBarTheme"
+                    parent="@style/Theme.AppCompat.Light.DarkActionBar" >
+                    <item name="android:actionBarStyle">
+@style/MyActionBar
+                    </item>
+
+                    <!-- Support library compatibility -->
+                    <item name="actionBarStyle">
+@style/MyActionBar
+                    </item>
                 </style>
             </file>
             <file
@@ -8438,10 +8473,11 @@ false
                 </dimen>
             </file>
             <file
-                name="list_fragment"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\list_fragment.xml"
-                qualifiers=""
-                type="layout" />
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\colors.xml"
+                qualifiers="" >
+                <color name="material_design_blue" >#5677fc
+                </color>
+            </file>
         </source>
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\generated\debug" />

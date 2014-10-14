@@ -19,6 +19,15 @@ private static final String LIST_ITEM_TITLE = "list_title";
     private static final String LIST_ITEM_DESCRIPTION = "list_description" ;
 
     /**
+     * Returns a new instance of this fragment for the given section
+     * number.
+     */
+    public static ListFragment newInstance() {
+        ListFragment fragment = new ListFragment();
+        return fragment;
+    }
+
+    /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
