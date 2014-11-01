@@ -4,6 +4,7 @@ import android.provider.BaseColumns;
 
 /**
  * Created by Diogo on 26-10-2014.
+ * @author Diogo
  */
 public final class DbMedsEntry implements BaseColumns {
         public static final String TABLE_NAME = "meds";

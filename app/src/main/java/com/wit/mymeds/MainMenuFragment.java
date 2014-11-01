@@ -12,6 +12,7 @@ import android.widget.Button;
 
 /**
  * A placeholder fragment containing a simple view.
+ * @author Diogo
  */
 public class MainMenuFragment extends Fragment {
 

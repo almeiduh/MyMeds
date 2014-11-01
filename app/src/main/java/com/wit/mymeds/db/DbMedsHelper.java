@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by Diogo on 26-10-2014.
+ * @author Diogo
  */
 public class DbMedsHelper extends SQLiteOpenHelper {
 

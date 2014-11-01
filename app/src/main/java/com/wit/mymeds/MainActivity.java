@@ -8,7 +8,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 
-
+/**
+ * Main Activity - This is the application's main activity.
+ * Created by Diogo on 26-10-2014.
+ * @author Diogo
+ */
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 

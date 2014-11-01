@@ -12539,6 +12539,11 @@ false
                 qualifiers=""
                 type="layout" />
             <file
+                name="home"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\home.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="list_fragment"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\list_fragment.xml"
                 qualifiers=""
@@ -12551,6 +12556,11 @@ false
             <file
                 name="navigation_drawer_list_item"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\navigation_drawer_list_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="splash"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\splash.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -12590,6 +12600,28 @@ false
                 </string>
                 <string name="navigation_drawer_title_list" >List
                 </string>
+
+                <string-array name="os" >
+                    <item>
+a1
+                    </item>
+                    <item>
+b2
+                    </item>
+                    <item>
+c3
+                    </item>
+                    <item>
+d4
+                    </item>
+                    <item>
+e5
+                    </item>
+                    <item>
+f6
+                    </item>
+                </string-array>
+
                 <string name="action_settings" >Settings
                 </string>
                 <string name="app_name" >MyMeds
@@ -12716,6 +12748,26 @@ false
                 qualifiers="w820dp-v13" >
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
+            </file>
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\array.xml"
+                qualifiers="" >
+                <array name="list_context_items" >
+                    <item>
+Edit
+                    </item>
+                    <item>
+Delete
+                    </item>
+                </array>
+                <array name="list_context_items_id" >
+                    <item>
+0
+                    </item>
+                    <item>
+1
+                    </item>
+                </array>
             </file>
         </source>
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\rs\debug" />

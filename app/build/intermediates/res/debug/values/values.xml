@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/array.xml -->
+    <eat-comment />
+
+    <array name="list_context_items">
+        <item>Edit</item>
+        <item>Delete</item>
+    </array>
+    <array name="list_context_items_id">
+        <item>0</item>
+        <item>1</item>
+    </array>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string-array name="os">
+        <item>a1</item>
+        <item>b2</item>
+        <item>c3</item>
+        <item>d4</item>
+        <item>e5</item>
+        <item>f6</item>
+    </string-array>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 

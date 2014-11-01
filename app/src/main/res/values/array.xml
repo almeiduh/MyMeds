@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="list_context_items">
+        <item>Edit</item>
+        <item>Delete</item>
+    </array>
+    <array name="list_context_items_id">
+        <item>0</item>
+        <item>1</item>
+    </array>
+</resources>
