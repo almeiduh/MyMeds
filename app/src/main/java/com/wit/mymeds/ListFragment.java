@@ -36,6 +36,8 @@ public class ListFragment extends android.support.v4.app.ListFragment {
 
     private static final String LIST_ITEM_TITLE = "list_title";
     private static final String LIST_ITEM_DESCRIPTION = "list_description" ;
+    private static final String LIST_ITEM_HOURS = "list_hours" ;
+
     ArrayList<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
     /**
@@ -62,7 +64,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         DbMedsHelper mDbHelper = new DbMedsHelper(getActivity());
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        insertDbDummyValue(db);
+        // insertDbDummyValue(db);
 
         ListAdapter la = getListAdapter(db);
 
@@ -104,11 +106,22 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         do {
             String itemName = c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_NAME));
             String allDays = getAllDaysString(c);
-            list.add(putData(itemName, allDays));
+            String hours = getHoursString(c);
+            list.add(putData(itemName, allDays, hours));
 
         } while(c.moveToNext());
 
-        return new SimpleAdapter(getActivity(), list, R.layout.list_item_layout, new String[] {LIST_ITEM_TITLE, LIST_ITEM_DESCRIPTION } , new int[]{R.id.list_title, R.id.list_description} );
+        return new SimpleAdapter(getActivity(), list, R.layout.list_item_layout, new String[] {LIST_ITEM_TITLE, LIST_ITEM_DESCRIPTION, LIST_ITEM_HOURS } , new int[]{R.id.list_title, R.id.list_description, R.id.list_hours} );
+    }
+
+    private String getHoursString(Cursor c) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Starting hour: ");
+        sb.append(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_START_HOUR));
+        sb.append("   Repeating every: ");
+        sb.append(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR));
+        sb.append(" hours");
+        return sb.toString();
     }
 
     private String getAllDaysString(Cursor c) {
@@ -132,6 +145,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         if(allDays.length() > 0) {
             allDays = allDays.substring(0, allDays.length() - 2);
         }
+
         return allDays;
     }
 
@@ -157,10 +171,11 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         }
     }
 
-    private HashMap<String, String> putData(String name, String purpose) {
+    private HashMap<String, String> putData(String title, String description, String hours) {
         HashMap<String, String> item = new HashMap<String, String>();
-        item.put(LIST_ITEM_TITLE, name);
-        item.put(LIST_ITEM_DESCRIPTION, purpose);
+        item.put(LIST_ITEM_TITLE, title);
+        item.put(LIST_ITEM_DESCRIPTION, description);
+        item.put(LIST_ITEM_HOURS, hours);
         return item;
     }
 
