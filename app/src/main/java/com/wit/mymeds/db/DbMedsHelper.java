@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DbMedsHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "MyMeds.db";
 
     private static final String TEXT_TYPE = " TEXT";
@@ -19,7 +19,7 @@ public class DbMedsHelper extends SQLiteOpenHelper {
     private static final String COMMA_SEP = ",";
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + DbMedsEntry.TABLE_NAME + " (" +
             DbMedsEntry._ID + INTEGER_TYPE + " PRIMARY KEY" + COMMA_SEP +
-            DbMedsEntry.COLUMN_NAME_MED_NAME + TEXT_TYPE + COMMA_SEP +
+            DbMedsEntry.COLUMN_NAME_MED_NAME + TEXT_TYPE + " unique " + COMMA_SEP +
             DbMedsEntry.COLUMN_NAME_MED_SUNDAY + INTEGER_TYPE + COMMA_SEP +
             DbMedsEntry.COLUMN_NAME_MED_MONDAY + INTEGER_TYPE + COMMA_SEP +
             DbMedsEntry.COLUMN_NAME_MED_TUESDAY + INTEGER_TYPE + COMMA_SEP +

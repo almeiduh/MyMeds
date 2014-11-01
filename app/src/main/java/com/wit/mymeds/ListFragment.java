@@ -3,6 +3,7 @@ package com.wit.mymeds;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -61,8 +62,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         DbMedsHelper mDbHelper = new DbMedsHelper(getActivity());
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        //insertDbDummyValue(db);
-
+        insertDbDummyValue(db);
 
         ListAdapter la = getListAdapter(db);
 
@@ -138,7 +138,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
     private void insertDbDummyValue(SQLiteDatabase db) {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(DbMedsEntry.COLUMN_NAME_MED_NAME, "Bazinga");
+        values.put(DbMedsEntry.COLUMN_NAME_MED_NAME, "Mucorrinatiolly");
         values.put(DbMedsEntry.COLUMN_NAME_MED_SUNDAY, 0);
         values.put(DbMedsEntry.COLUMN_NAME_MED_MONDAY, 1);
         values.put(DbMedsEntry.COLUMN_NAME_MED_TUESDAY, 0);
@@ -150,7 +150,11 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         values.put(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR, 6);
 
 // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(DbMedsEntry.TABLE_NAME, null, values);
+        try {
+            long newRowId = db.insertOrThrow(DbMedsEntry.TABLE_NAME, null, values);
+        } catch (SQLiteConstraintException e) {
+            Toast.makeText(getActivity(), "An entry with the same name already exists", Toast.LENGTH_LONG).show();
+        }
     }
 
     private HashMap<String, String> putData(String name, String purpose) {
