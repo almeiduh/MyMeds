@@ -12479,6 +12479,11 @@ false
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="plus_icon"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-hdpi\plus_icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="drawer_shadow"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\drawer_shadow.9.png"
                 qualifiers="mdpi-v4"
@@ -12491,6 +12496,11 @@ false
             <file
                 name="ic_launcher"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="plus_icon"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\plus_icon.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
@@ -12509,6 +12519,11 @@ false
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
+                name="plus_icon"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xhdpi\plus_icon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="drawer_shadow"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\drawer_shadow.9.png"
                 qualifiers="xxhdpi-v4"
@@ -12521,6 +12536,11 @@ false
             <file
                 name="ic_launcher"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="plus_icon"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\plus_icon.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
@@ -12573,6 +12593,26 @@ false
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\menu\main.xml"
                 qualifiers=""
                 type="menu" />
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\array.xml"
+                qualifiers="" >
+                <array name="list_context_items" >
+                    <item>
+Edit
+                    </item>
+                    <item>
+Delete
+                    </item>
+                </array>
+                <array name="list_context_items_id" >
+                    <item>
+0
+                    </item>
+                    <item>
+1
+                    </item>
+                </array>
+            </file>
             <file
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\colors.xml"
                 qualifiers="" >
@@ -12748,26 +12788,6 @@ f6
                 qualifiers="w820dp-v13" >
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
-            </file>
-            <file
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\array.xml"
-                qualifiers="" >
-                <array name="list_context_items" >
-                    <item>
-Edit
-                    </item>
-                    <item>
-Delete
-                    </item>
-                </array>
-                <array name="list_context_items_id" >
-                    <item>
-0
-                    </item>
-                    <item>
-1
-                    </item>
-                </array>
             </file>
         </source>
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\rs\debug" />
