@@ -8,5 +8,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    
+    <string-array name="os">
+        <item>a1</item>
+        <item>b2</item>
+        <item>c3</item>
+        <item>d4</item>
+        <item>e5</item>
+        <item>f6</item>
+    </string-array>
 
 </resources>
