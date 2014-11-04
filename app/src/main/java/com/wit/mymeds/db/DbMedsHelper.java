@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DbMedsHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "MyMeds.db";
 
     private static final String TEXT_TYPE = " TEXT";
@@ -29,6 +29,7 @@ public class DbMedsHelper extends SQLiteOpenHelper {
             DbMedsEntry.COLUMN_NAME_MED_SATURDAY + INTEGER_TYPE + COMMA_SEP +
             // store as Unix Time, the number of seconds since 1970-01-01 00:00:00 UTC
             DbMedsEntry.COLUMN_NAME_MED_START_HOUR + INTEGER_TYPE + COMMA_SEP +
+            DbMedsEntry.COLUMN_NAME_MED_ICON + INTEGER_TYPE + COMMA_SEP +
             DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR + INTEGER_TYPE +
             " )";
 

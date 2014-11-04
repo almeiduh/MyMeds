@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.wit.mymeds.db.DbMedsEntry;
 import com.wit.mymeds.db.DbMedsHelper;
+import com.wit.mymeds.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
     private static final String LIST_ITEM_TITLE = "list_title";
     private static final String LIST_ITEM_DESCRIPTION = "list_description" ;
     private static final String LIST_ITEM_HOURS = "list_hours" ;
+    private static final String LIST_ITEM_ICON = "list_icon";
 
     ArrayList<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
@@ -64,8 +66,9 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         DbMedsHelper mDbHelper = new DbMedsHelper(getActivity());
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        // insertDbDummyValue(db);
-
+        insertDbDummyValue(db);
+// TODO - error when no values
+        // TODO - fragment goes to main menu when device rotates
         ListAdapter la = getListAdapter(db);
 
         this.setListAdapter(la);
@@ -85,7 +88,8 @@ public class ListFragment extends android.support.v4.app.ListFragment {
                 DbMedsEntry.COLUMN_NAME_MED_FRIDAY,
                 DbMedsEntry.COLUMN_NAME_MED_SATURDAY,
                 DbMedsEntry.COLUMN_NAME_MED_START_HOUR,
-                DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR
+                DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR,
+                DbMedsEntry.COLUMN_NAME_MED_ICON
         };
 
         String sortOrder =
@@ -107,11 +111,16 @@ public class ListFragment extends android.support.v4.app.ListFragment {
             String itemName = c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_NAME));
             String allDays = getAllDaysString(c);
             String hours = getHoursString(c);
-            list.add(putData(itemName, allDays, hours));
+            Integer iconId = Constants.iconIdMap.get(c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_ICON)));
+            if(iconId == null) {
+                iconId = R.drawable.pills_red_icon;
+            }
+            String icon = Integer.toString(iconId);
+            list.add(putData(itemName, allDays, hours, icon));
 
         } while(c.moveToNext());
 
-        return new SimpleAdapter(getActivity(), list, R.layout.list_item_layout, new String[] {LIST_ITEM_TITLE, LIST_ITEM_DESCRIPTION, LIST_ITEM_HOURS } , new int[]{R.id.list_title, R.id.list_description, R.id.list_hours} );
+        return new SimpleAdapter(getActivity(), list, R.layout.list_item_layout, new String[] {LIST_ITEM_TITLE, LIST_ITEM_DESCRIPTION, LIST_ITEM_HOURS, LIST_ITEM_ICON } , new int[]{R.id.list_title, R.id.list_description, R.id.list_hours, R.id.list_icon} );
     }
 
     private String getHoursString(Cursor c) {
@@ -152,7 +161,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
     private void insertDbDummyValue(SQLiteDatabase db) {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(DbMedsEntry.COLUMN_NAME_MED_NAME, "Mucorrinatiolly");
+        values.put(DbMedsEntry.COLUMN_NAME_MED_NAME, "Testinvalid");
         values.put(DbMedsEntry.COLUMN_NAME_MED_SUNDAY, 0);
         values.put(DbMedsEntry.COLUMN_NAME_MED_MONDAY, 1);
         values.put(DbMedsEntry.COLUMN_NAME_MED_TUESDAY, 0);
@@ -162,6 +171,8 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         values.put(DbMedsEntry.COLUMN_NAME_MED_SATURDAY, 1);
         values.put(DbMedsEntry.COLUMN_NAME_MED_START_HOUR, "TIME");
         values.put(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR, 6);
+        values.put(DbMedsEntry.COLUMN_NAME_MED_ICON, 4);
+
 
 // Insert the new row, returning the primary key value of the new row
         try {
@@ -171,11 +182,12 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         }
     }
 
-    private HashMap<String, String> putData(String title, String description, String hours) {
+    private HashMap<String, String> putData(String title, String description, String hours, String icon) {
         HashMap<String, String> item = new HashMap<String, String>();
         item.put(LIST_ITEM_TITLE, title);
         item.put(LIST_ITEM_DESCRIPTION, description);
         item.put(LIST_ITEM_HOURS, hours);
+        item.put(LIST_ITEM_ICON, icon);
         return item;
     }
 

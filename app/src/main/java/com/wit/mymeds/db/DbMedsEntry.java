@@ -18,5 +18,7 @@ public final class DbMedsEntry implements BaseColumns {
         public static final String COLUMN_NAME_MED_SATURDAY = "med_saturday";
         public static final String COLUMN_NAME_MED_START_HOUR = "med_start_hour";
         public static final String COLUMN_NAME_MED_FREQUENCY_HOUR = "med_frequency_hour";
-    }
+        public static final String COLUMN_NAME_MED_ICON = "med_icon";
+
+}
 

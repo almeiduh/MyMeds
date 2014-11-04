@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/array.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/array.xml -->
     <eat-comment />
 
     <array name="list_context_items">
@@ -12,7 +12,7 @@
         <item>0</item>
         <item>1</item>
     </array>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string-array name="os">
@@ -23,7 +23,7 @@
         <item>e5</item>
         <item>f6</item>
     </string-array>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
     <attr name="drawerArrowStyle" format="reference" />
@@ -56,13 +56,13 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/colors.xml -->
     <eat-comment />
 
     <color name="colorAccent">@color/accent_material_light</color>
     <color name="colorPrimary">#03a9f4</color>
     <color name="colorPrimaryDark">#212121</color>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
@@ -1015,12 +1015,12 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
@@ -1029,11 +1029,11 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item name="disabled_alpha_material_dark" format="float" type="dimen">0.30</item>
     <item name="disabled_alpha_material_light" format="float" type="dimen">0.26</item>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="navigation_drawer_width">240dp</dimen>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="action_bar_activity_content" type="id"/>
@@ -1063,7 +1063,7 @@
     <string name="abc_searchview_description_voice">Voice search</string>
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string name="action_example">Example action</string>
@@ -1073,7 +1073,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_title_list">List</string>
     <string name="navigation_drawer_title_main_menu">Main Menu</string>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
@@ -1087,7 +1087,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">
@@ -1944,7 +1944,7 @@ m>                <item name="android:textColorLink">@color/link_text_material_d
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/themes.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/values/themes.xml -->
     <eat-comment />
 
     <style name="CustomTheme" parent="@style/Theme.AppCompat.Light">
@@ -1976,7 +1976,7 @@ m>                <item name="android:textColorLink">@color/link_text_material_d
         <item name="android:textColor">@android:color/white</item>
         <!-- The textColor property is backward compatible with the Support Library -->
     </style>
-    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
     <style name="Platform.AppCompat" parent="android:Theme">
