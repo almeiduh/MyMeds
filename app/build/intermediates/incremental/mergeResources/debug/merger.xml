@@ -1484,12 +1484,12 @@ true
                     </item>
                 </style>
 
-                <color name="material_deep_teal_500" >#ff009688
-                </color>
-
                 <item
                     name="action_bar_activity_content"
                     type="id"/>
+
+                <color name="material_deep_teal_500" >#ff009688
+                </color>
 
                 <style name="Base.TextAppearance.AppCompat.Subhead" >
                     <item name="android:textSize">
@@ -1879,20 +1879,16 @@ false
                 </declare-styleable>
 
                 <style
+                    name="Base.Widget.AppCompat.Light.ActionBar.TabBar"
+                    parent="Base.Widget.AppCompat.ActionBar.TabBar" />
+
+                <style
                     name="Base.Widget.AppCompat.Light.ActionBar.TabView"
                     parent="Base.Widget.AppCompat.ActionBar.TabView" >
                     <item name="android:background">
 @drawable/abc_tab_indicator_material
                     </item>
                 </style>
-
-                <style
-                    name="Base.Widget.AppCompat.Light.ActionBar.TabBar"
-                    parent="Base.Widget.AppCompat.ActionBar.TabBar" />
-
-                <style
-                    name="TextAppearance.AppCompat.Inverse"
-                    parent="Base.TextAppearance.AppCompat.Inverse" />
 
                 <style name="Base.TextAppearance.AppCompat.Medium" >
                     <item name="android:textSize">
@@ -1904,8 +1900,8 @@ false
                 </style>
 
                 <style
-                    name="Widget.AppCompat.Light.ActionBar.Solid"
-                    parent="Base.Widget.AppCompat.Light.ActionBar.Solid" />
+                    name="TextAppearance.AppCompat.Inverse"
+                    parent="Base.TextAppearance.AppCompat.Inverse" />
 
                 <style
                     name="Base.TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
@@ -1916,12 +1912,16 @@ false
                 </style>
 
                 <style
-                    name="Widget.AppCompat.Light.ActionBar.TabText"
-                    parent="Base.Widget.AppCompat.Light.ActionBar.TabText" />
+                    name="Widget.AppCompat.Light.ActionBar.Solid"
+                    parent="Base.Widget.AppCompat.Light.ActionBar.Solid" />
 
                 <style
                     name="Widget.AppCompat.ActionBar.TabBar"
                     parent="Base.Widget.AppCompat.ActionBar.TabBar" />
+
+                <style
+                    name="Widget.AppCompat.Light.ActionBar.TabText"
+                    parent="Base.Widget.AppCompat.Light.ActionBar.TabText" />
 
                 <dimen name="abc_text_size_display_2_material" >45sp
                 </dimen>
@@ -2401,11 +2401,12 @@ normal
 
                 <dimen name="abc_text_size_display_1_material" >34sp
                 </dimen>
-                <dimen name="abc_action_bar_default_height_material" >56dp
-                </dimen>
 
                 <string name="abc_action_mode_done" >Done
                 </string>
+
+                <dimen name="abc_action_bar_default_height_material" >56dp
+                </dimen>
 
                 <style
                     name="Widget.AppCompat.Light.ActionMode.Inverse"
@@ -2432,19 +2433,12 @@ normal
                     name="TextAppearance.AppCompat.Display3"
                     parent="Base.TextAppearance.AppCompat.Display3" />
 
-                <style
-                    name="TextAppearance.AppCompat.Display2"
-                    parent="Base.TextAppearance.AppCompat.Display2" />
-
                 <color name="hint_foreground_material_dark" >@color/bright_foreground_disabled_material_dark
                 </color>
 
                 <style
-                    name="TextAppearance.AppCompat.Display4"
-                    parent="Base.TextAppearance.AppCompat.Display4" />
-
-                <color name="abc_search_url_text_normal" >#7fa87f
-                </color>
+                    name="TextAppearance.AppCompat.Display2"
+                    parent="Base.TextAppearance.AppCompat.Display2" />
 
                 <item
                     name="dialog_fixed_width_minor"
@@ -2452,12 +2446,19 @@ normal
 320dp
                 </item>
 
+                <color name="abc_search_url_text_normal" >#7fa87f
+                </color>
+
                 <style
-                    name="Widget.AppCompat.ActionButton.CloseMode"
-                    parent="RtlOverlay.Widget.AppCompat.ActionButton.CloseMode" />
+                    name="TextAppearance.AppCompat.Display4"
+                    parent="Base.TextAppearance.AppCompat.Display4" />
 
                 <color name="primary_material_light" >#ffbdbdbd
                 </color>
+
+                <style
+                    name="Widget.AppCompat.ActionButton.CloseMode"
+                    parent="RtlOverlay.Widget.AppCompat.ActionButton.CloseMode" />
 
                 <style
                     name="Base.Widget.AppCompat.PopupMenu"
@@ -2529,6 +2530,9 @@ normal
                     </item>
                 </style>
 
+                <dimen name="abc_text_size_button_material" >14sp
+                </dimen>
+
                 <style
                     name="RtlOverlay.Widget.AppCompat.Search.DropDown.Query"
                     parent="android:Widget" >
@@ -2537,8 +2541,6 @@ true
                     </item>
                 </style>
 
-                <dimen name="abc_text_size_button_material" >14sp
-                </dimen>
                 <dimen name="abc_text_size_title_material_toolbar" >20dp
                 </dimen>
 
@@ -2562,12 +2564,12 @@ false
                     </item>
                 </style>
 
-                <dimen name="abc_action_button_min_height_material" >48dp
-                </dimen>
-
                 <style
                     name="Base.Theme.AppCompat"
                     parent="Base.V7.Theme.AppCompat" />
+
+                <dimen name="abc_action_button_min_height_material" >48dp
+                </dimen>
 
                 <style
                     name="RtlOverlay.Widget.AppCompat.Search.DropDown"
@@ -2626,12 +2628,12 @@ false
 false
                 </bool>
 
+                <dimen name="abc_action_button_min_width_material" >48dp
+                </dimen>
+
                 <style
                     name="Theme.AppCompat.Light.DarkActionBar"
                     parent="Base.Theme.AppCompat.Light.DarkActionBar" />
-
-                <dimen name="abc_action_button_min_width_material" >48dp
-                </dimen>
 
                 <style
                     name="Base.Widget.AppCompat.DrawerArrowToggle"
@@ -2800,23 +2802,19 @@ m>
                     </item>
                 </style>
 
-                <style
-                    name="TextAppearance.AppCompat.Widget.DropDownItem"
-                    parent="Base.TextAppearance.AppCompat.Widget.DropDownItem" />
-
                 <dimen name="abc_action_bar_default_padding_material" >4dp
                 </dimen>
 
                 <style
-                    name="Widget.AppCompat.ActionButton"
-                    parent="Base.Widget.AppCompat.ActionButton" />
+                    name="TextAppearance.AppCompat.Widget.DropDownItem"
+                    parent="Base.TextAppearance.AppCompat.Widget.DropDownItem" />
 
                 <dimen name="abc_action_button_min_width_overflow_material" >36dp
                 </dimen>
 
                 <style
-                    name="Theme.AppCompat.CompactMenu"
-                    parent="Base.Theme.AppCompat.CompactMenu" />
+                    name="Widget.AppCompat.ActionButton"
+                    parent="Base.Widget.AppCompat.ActionButton" />
 
                 <style
                     name="Base.Widget.AppCompat.Toolbar"
@@ -2848,16 +2846,20 @@ top
                 </style>
 
                 <style
+                    name="Theme.AppCompat.CompactMenu"
+                    parent="Base.Theme.AppCompat.CompactMenu" />
+
+                <style
                     name="Theme.AppCompat.Light.DialogWhenLarge"
                     parent="Base.Theme.AppCompat.Light.DialogWhenLarge" />
 
                 <style
-                    name="Widget.AppCompat.ActionBar.TabText"
-                    parent="Base.Widget.AppCompat.ActionBar.TabText" />
-
-                <style
                     name="Base.TextAppearance.AppCompat.Widget.PopupMenu.Small"
                     parent="TextAppearance.AppCompat.Menu" />
+
+                <style
+                    name="Widget.AppCompat.ActionBar.TabText"
+                    parent="Base.Widget.AppCompat.ActionBar.TabText" />
 
                 <style name="Base.Widget.AppCompat.PopupMenu.Overflow" >
                     <item name="overlapAnchor">
@@ -2868,11 +2870,11 @@ true
                     </item>
                 </style>
 
-                <dimen name="abc_search_view_text_min_width" >160dip
-                </dimen>
-
                 <string name="abc_activity_chooser_view_see_all" >See all
                 </string>
+
+                <dimen name="abc_search_view_text_min_width" >160dip
+                </dimen>
 
                 <style
                     name="Base.V7.Theme.AppCompat"
@@ -4843,10 +4845,6 @@ true
                     </item>
                 </style>
 
-                <style
-                    name="TextAppearance.AppCompat.Widget.Switch"
-                    parent="Base.TextAppearance.AppCompat.Widget.Switch" />
-
                 <style name="Base.TextAppearance.AppCompat.Subhead.Inverse" >
                     <item name="android:textColor">
 ?android:attr/textColorSecondaryInverse
@@ -4863,21 +4861,25 @@ true
                 </style>
 
                 <style
+                    name="TextAppearance.AppCompat.Widget.Switch"
+                    parent="Base.TextAppearance.AppCompat.Widget.Switch" />
+
+                <style
                     name="Widget.AppCompat.ListView.Menu"
                     parent="Base.Widget.AppCompat.ListView.Menu" />
 
                 <color name="bright_foreground_inverse_material_dark" >@color/bright_foreground_material_light
                 </color>
 
-                <style
-                    name="Theme.AppCompat.Light.Dialog"
-                    parent="Base.Theme.AppCompat.Light.Dialog" />
+                <string name="abc_action_bar_home_description_format" >%1$s, %2$s
+                </string>
 
                 <color name="highlighted_text_material_light" >#66009688
                 </color>
 
-                <string name="abc_action_bar_home_description_format" >%1$s, %2$s
-                </string>
+                <style
+                    name="Theme.AppCompat.Light.Dialog"
+                    parent="Base.Theme.AppCompat.Light.Dialog" />
 
                 <color name="secondary_text_default_material_dark" >#b3ffffff
                 </color>
@@ -4898,9 +4900,6 @@ true
                     name="Base.Theme.AppCompat.DialogWhenLarge"
                     parent="Theme.AppCompat" />
 
-                <dimen name="abc_text_size_menu_material" >16sp
-                </dimen>
-
                 <style
                     name="Base.Theme.AppCompat.CompactMenu"
                     parent="" >
@@ -4911,6 +4910,9 @@ true
 @style/Widget.AppCompat.ListView.Menu
                     </item>
                 </style>
+
+                <dimen name="abc_text_size_menu_material" >16sp
+                </dimen>
 
                 <style name="Base.TextAppearance.AppCompat.Small" >
                     <item name="android:textSize">
@@ -4955,9 +4957,9 @@ true
                 <dimen name="abc_config_prefDialogWidth" >320dp
                 </dimen>
 
-                <color name="hint_foreground_material_light" >@color/bright_foreground_disabled_material_light
-                </color>
                 <color name="background_material_light" >#ffeeeeee
+                </color>
+                <color name="hint_foreground_material_light" >@color/bright_foreground_disabled_material_light
                 </color>
 
                 <style
@@ -5044,9 +5046,6 @@ true
                 <color name="bright_foreground_inverse_material_light" >@color/bright_foreground_material_dark
                 </color>
 
-                <dimen name="abc_text_size_subtitle_material_toolbar" >16dp
-                </dimen>
-
                 <style name="Base.ThemeOverlay.AppCompat.Light" >
                     <item name="android:windowBackground">
 @color/background_material_light
@@ -5131,6 +5130,9 @@ true
 true
                     </item>
                 </style>
+
+                <dimen name="abc_text_size_subtitle_material_toolbar" >16dp
+                </dimen>
 
                 <item
                     name="progress_horizontal"
@@ -5630,12 +5632,12 @@ true
                     name="TextAppearance.AppCompat.Headline"
                     parent="Base.TextAppearance.AppCompat.Headline" />
 
+                <color name="primary_text_disabled_material_light" >#39000000
+                </color>
+
                 <style
                     name="Widget.AppCompat.ProgressBar.Horizontal"
                     parent="Base.Widget.AppCompat.ProgressBar.Horizontal" />
-
-                <color name="primary_text_disabled_material_light" >#39000000
-                </color>
 
                 <style
                     name="RtlOverlay.Widget.AppCompat.PopupMenuItem.InternalGroup"
@@ -6206,12 +6208,12 @@ true
                     msgid="3691816814315814921" >"Smazat dotaz"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Hotovo"
-                </string>
-                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Hledat"
+                </string>
+                <string
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Hotovo"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -6338,12 +6340,12 @@ true
                     msgid="3691816814315814921" >"Suchanfrage löschen"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Freigeben für"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Suchanfrage senden"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Freigeben für"
                 </string>
             </file>
             <file
@@ -6398,16 +6400,16 @@ true
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
-                    name="abc_action_menu_overflow_description"
-                    msgid="3588849162933574182" >"Περισσότερες επιλογές"
+                    name="abc_searchview_description_voice"
+                    msgid="893419373245838918" >"Φωνητική αναζήτηση"
                 </string>
                 <string
                     name="abc_searchview_description_clear"
                     msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
                 </string>
                 <string
-                    name="abc_searchview_description_voice"
-                    msgid="893419373245838918" >"Φωνητική αναζήτηση"
+                    name="abc_action_menu_overflow_description"
+                    msgid="3588849162933574182" >"Περισσότερες επιλογές"
                 </string>
             </file>
             <file
@@ -6530,12 +6532,12 @@ true
                     msgid="4076576682505996667" >"Done"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Share with"
-                </string>
-                <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"See all"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Share with"
                 </string>
             </file>
             <file
@@ -6594,12 +6596,12 @@ true
                     msgid="8928215447528550784" >"Enviar consulta"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with_application"
-                    msgid="7165123711973476752" >"Compartir con %s"
-                </string>
-                <string
                     name="abc_action_bar_up_description"
                     msgid="1594238315039666878" >"Desplazarse hacia arriba"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with_application"
+                    msgid="7165123711973476752" >"Compartir con %s"
                 </string>
             </file>
             <file
@@ -6718,12 +6720,12 @@ true
                     msgid="4600421777120114993" >"Navigeerimine avaekraanile"
                 </string>
                 <string
-                    name="abc_action_bar_home_description_format"
-                    msgid="1397052879051804371" >"%1$s, %2$s"
-                </string>
-                <string
                     name="abc_action_bar_up_description"
                     msgid="1594238315039666878" >"Navigeerimine üles"
+                </string>
+                <string
+                    name="abc_action_bar_home_description_format"
+                    msgid="1397052879051804371" >"%1$s, %2$s"
                 </string>
                 <string
                     name="abc_activitychooserview_choose_application"
@@ -6850,12 +6852,12 @@ true
                     msgid="1594238315039666878" >"پیمایش به بالا"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"انجام شد"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"ارسال عبارت جستجو"
+                </string>
+                <string
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"انجام شد"
                 </string>
             </file>
             <file
@@ -7106,12 +7108,12 @@ true
                     msgid="1594238315039666878" >"Desprazarse cara arriba"
                 </string>
                 <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Ir á páxina de inicio"
-                </string>
-                <string
                     name="abc_action_bar_home_subtitle_description_format"
                     msgid="6623331958280229229" >"%1$s, %2$s, %3$s"
+                </string>
+                <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Ir á páxina de inicio"
                 </string>
             </file>
             <file
@@ -7422,16 +7424,16 @@ true
                     msgid="2550479030709304392" >"Kueri penelusuran"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Selesai"
+                    name="abc_searchview_description_search"
+                    msgid="8264924765203268293" >"Telusuri"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Lihat semua"
                 </string>
                 <string
-                    name="abc_searchview_description_search"
-                    msgid="8264924765203268293" >"Telusuri"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Selesai"
                 </string>
             </file>
             <file
@@ -7486,12 +7488,12 @@ true
                     msgid="2031811694353399454" >"Veldu forrit"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deila með"
-                </string>
-                <string
                     name="abc_action_bar_up_description"
                     msgid="1594238315039666878" >"Fara upp"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deila með"
                 </string>
                 <string
                     name="abc_action_menu_overflow_description"
@@ -7810,12 +7812,12 @@ true
                     msgid="2550479030709304392" >"Сұрақты іздеу"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Орындалды"
-                </string>
-                <string
                     name="abc_activitychooserview_choose_application"
                     msgid="2031811694353399454" >"Қолданбаны таңдау"
+                </string>
+                <string
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Орындалды"
                 </string>
             </file>
             <file
@@ -7874,12 +7876,12 @@ true
                     msgid="1397052879051804371" >"%1$s, %2$s"
                 </string>
                 <string
-                    name="abc_activitychooserview_choose_application"
-                    msgid="2031811694353399454" >"ជ្រើស​កម្មវិធី​​"
-                </string>
-                <string
                     name="abc_searchview_description_clear"
                     msgid="3691816814315814921" >"សម្អាត​សំណួរ"
+                </string>
+                <string
+                    name="abc_activitychooserview_choose_application"
+                    msgid="2031811694353399454" >"ជ្រើស​កម្មវិធី​​"
                 </string>
             </file>
             <file
@@ -8100,12 +8102,12 @@ true
             <file
                 path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\res\values-large\values.xml"
                 qualifiers="large-v4" >
-                <dimen name="abc_search_view_text_min_width" >192dip
-                </dimen>
-
                 <bool name="abc_action_bar_embed_tabs_pre_jb" >
 true
                 </bool>
+
+                <dimen name="abc_search_view_text_min_width" >192dip
+                </dimen>
 
                 <item
                     name="dialog_fixed_height_major"
@@ -8264,16 +8266,16 @@ true
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with_application"
-                    msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
+                    name="abc_searchview_description_search"
+                    msgid="8264924765203268293" >"Paieška"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
                     msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
                 </string>
                 <string
-                    name="abc_searchview_description_search"
-                    msgid="8264924765203268293" >"Paieška"
+                    name="abc_shareactionprovider_share_with_application"
+                    msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
                 </string>
             </file>
             <file
@@ -8452,12 +8454,12 @@ true
                     msgid="8264924765203268293" >"തിരയൽ"
                 </string>
                 <string
-                    name="abc_action_bar_up_description"
-                    msgid="1594238315039666878" >"മുകളിലേക്ക് നാവിഗേറ്റുചെയ്യുക"
-                </string>
-                <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"കൂടുതല്‍ ഓപ്‌ഷനുകള്‍"
+                </string>
+                <string
+                    name="abc_action_bar_up_description"
+                    msgid="1594238315039666878" >"മുകളിലേക്ക് നാവിഗേറ്റുചെയ്യുക"
                 </string>
             </file>
             <file
@@ -8900,12 +8902,12 @@ true
                     msgid="1594238315039666878" >"Omhoog navigeren"
                 </string>
                 <string
-                    name="abc_activitychooserview_choose_application"
-                    msgid="2031811694353399454" >"Een app selecteren"
-                </string>
-                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Zoeken"
+                </string>
+                <string
+                    name="abc_activitychooserview_choose_application"
+                    msgid="2031811694353399454" >"Een app selecteren"
                 </string>
             </file>
             <file
@@ -9099,12 +9101,12 @@ false
                     msgid="4076576682505996667" >"Concluído"
                 </string>
                 <string
-                    name="abc_action_bar_home_subtitle_description_format"
-                    msgid="6623331958280229229" >"%1$s, %2$s, %3$s"
-                </string>
-                <string
                     name="abc_activitychooserview_choose_application"
                     msgid="2031811694353399454" >"Escolher uma aplicação"
+                </string>
+                <string
+                    name="abc_action_bar_home_subtitle_description_format"
+                    msgid="6623331958280229229" >"%1$s, %2$s, %3$s"
                 </string>
             </file>
             <file
@@ -9163,12 +9165,12 @@ false
                     msgid="8928215447528550784" >"Trimiteți interogarea"
                 </string>
                 <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Navigați la ecranul de pornire"
-                </string>
-                <string
                     name="abc_action_bar_up_description"
                     msgid="1594238315039666878" >"Navigați în sus"
+                </string>
+                <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Navigați la ecranul de pornire"
                 </string>
             </file>
             <file
@@ -9415,12 +9417,12 @@ false
                     msgid="8264924765203268293" >"Iskanje"
                 </string>
                 <string
-                    name="abc_searchview_description_query"
-                    msgid="2550479030709304392" >"Iskalna poizvedba"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Pošiljanje poizvedbe"
+                </string>
+                <string
+                    name="abc_searchview_description_query"
+                    msgid="2550479030709304392" >"Iskalna poizvedba"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -9479,12 +9481,12 @@ false
                     msgid="3691816814315814921" >"Брисање упита"
                 </string>
                 <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Одлазак на Почетну"
-                </string>
-                <string
                     name="abc_searchview_description_voice"
                     msgid="893419373245838918" >"Гласовна претрага"
+                </string>
+                <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Одлазак на Почетну"
                 </string>
                 <string
                     name="abc_action_bar_up_description"
@@ -9543,12 +9545,12 @@ false
                     msgid="7468859129482906941" >"Visa alla"
                 </string>
                 <string
-                    name="abc_action_bar_up_description"
-                    msgid="1594238315039666878" >"Navigera uppåt"
-                </string>
-                <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"Fler alternativ"
+                </string>
+                <string
+                    name="abc_action_bar_up_description"
+                    msgid="1594238315039666878" >"Navigera uppåt"
                 </string>
                 <string
                     name="abc_searchview_description_submit"
@@ -9607,12 +9609,12 @@ false
                     msgid="3588849162933574182" >"Chaguo zaidi"
                 </string>
                 <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Nenda mwanzo"
-                </string>
-                <string
                     name="abc_action_bar_home_description_format"
                     msgid="1397052879051804371" >"%1$s, %2$s"
+                </string>
+                <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Nenda mwanzo"
                 </string>
                 <string
                     name="abc_action_bar_home_subtitle_description_format"
@@ -9624,17 +9626,17 @@ false
                 qualifiers="sw600dp-v13" >
                 <dimen name="abc_action_bar_default_padding_material" >4dp
                 </dimen>
+                <dimen name="abc_action_bar_default_height_material" >64dp
+                </dimen>
                 <dimen name="abc_text_size_title_material_toolbar" >20dp
                 </dimen>
-                <dimen name="abc_action_bar_default_height_material" >64dp
+                <dimen name="abc_config_prefDialogWidth" >580dp
                 </dimen>
 
                 <integer name="abc_max_action_buttons" >
 5
                 </integer>
 
-                <dimen name="abc_config_prefDialogWidth" >580dp
-                </dimen>
                 <dimen name="abc_text_size_subtitle_material_toolbar" >16dp
                 </dimen>
             </file>
@@ -11106,10 +11108,6 @@ false
                 </style>
 
                 <style
-                    name="Base.V14.Theme.AppCompat.Light.Dialog"
-                    parent="Base.V11.Theme.AppCompat.Light.Dialog" />
-
-                <style
                     name="Base.Theme.AppCompat"
                     parent="Base.V14.Theme.AppCompat" >
                     <item name="android:actionModeCutDrawable">
@@ -11130,16 +11128,16 @@ false
                 </style>
 
                 <style
+                    name="Base.V14.Theme.AppCompat.Light.Dialog"
+                    parent="Base.V11.Theme.AppCompat.Light.Dialog" />
+
+                <style
                     name="Base.V14.Theme.AppCompat.Light"
                     parent="Base.V11.Theme.AppCompat.Light" />
 
                 <style
                     name="Base.V14.Theme.AppCompat.Dialog"
                     parent="Base.V11.Theme.AppCompat.Dialog" />
-
-                <style
-                    name="Base.V14.Theme.AppCompat"
-                    parent="Base.V11.Theme.AppCompat" />
 
                 <style
                     name="Base.Theme.AppCompat.Light"
@@ -11160,6 +11158,10 @@ false
 ?actionModeShareDrawable
                     </item>
                 </style>
+
+                <style
+                    name="Base.V14.Theme.AppCompat"
+                    parent="Base.V11.Theme.AppCompat" />
             </file>
             <file
                 path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\res\values-v17\values.xml"
@@ -11221,14 +11223,6 @@ viewStart
                 </style>
 
                 <style
-                    name="RtlOverlay.Widget.AppCompat.PopupMenuItem.InternalGroup"
-                    parent="android:Widget" >
-                    <item name="android:layout_marginStart">
-16dp
-                    </item>
-                </style>
-
-                <style
                     name="RtlOverlay.Widget.AppCompat.PopupMenuItem"
                     parent="android:Widget" >
                     <item name="android:paddingEnd">
@@ -11237,10 +11231,10 @@ viewStart
                 </style>
 
                 <style
-                    name="RtlOverlay.Widget.AppCompat.Search.DropDown.Query"
+                    name="RtlOverlay.Widget.AppCompat.PopupMenuItem.InternalGroup"
                     parent="android:Widget" >
-                    <item name="android:layout_alignParentEnd">
-true
+                    <item name="android:layout_marginStart">
+16dp
                     </item>
                 </style>
 
@@ -11248,6 +11242,14 @@ true
                     name="RtlOverlay.Widget.AppCompat.Search.DropDown.Icon1"
                     parent="android:Widget" >
                     <item name="android:layout_alignParentStart">
+true
+                    </item>
+                </style>
+
+                <style
+                    name="RtlOverlay.Widget.AppCompat.Search.DropDown.Query"
+                    parent="android:Widget" >
+                    <item name="android:layout_alignParentEnd">
 true
                     </item>
                 </style>
@@ -11261,14 +11263,6 @@ true
                 </style>
 
                 <style
-                    name="RtlOverlay.Widget.AppCompat.Search.DropDown.Icon2"
-                    parent="android:Widget" >
-                    <item name="android:layout_toStartOf">
-@id/edit_query
-                    </item>
-                </style>
-
-                <style
                     name="RtlOverlay.Widget.AppCompat.ActionButton.CloseMode"
                     parent="Base.Widget.AppCompat.ActionButton.CloseMode" >
                     <item name="android:paddingStart">
@@ -11276,6 +11270,14 @@ true
                     </item>
                     <item name="android:layout_marginEnd">
 16dp
+                    </item>
+                </style>
+
+                <style
+                    name="RtlOverlay.Widget.AppCompat.Search.DropDown.Icon2"
+                    parent="android:Widget" >
+                    <item name="android:layout_toStartOf">
+@id/edit_query
                     </item>
                 </style>
             </file>
@@ -11340,12 +11342,12 @@ true
                     parent="android:TextAppearance.Material.Display3" />
 
                 <style
-                    name="Base.Widget.AppCompat.Light.ActionBar.TabText"
-                    parent="android:Widget.Material.Light.ActionBar.TabText" />
-
-                <style
                     name="Base.TextAppearance.AppCompat.Display4"
                     parent="android:TextAppearance.Material.Display4" />
+
+                <style
+                    name="Base.Widget.AppCompat.Light.ActionBar.TabText"
+                    parent="android:Widget.Material.Light.ActionBar.TabText" />
 
                 <style
                     name="Base.Widget.AppCompat.AutoCompleteTextView"
@@ -11368,16 +11370,16 @@ false
                 </style>
 
                 <style
-                    name="Base.Widget.AppCompat.ActionBar.TabText"
-                    parent="android:Widget.Material.ActionBar.TabText" />
+                    name="Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+                    parent="android:TextAppearance.Material.Widget.PopupMenu.Small" />
 
                 <style
                     name="Base.TextAppearance.AppCompat.Small"
                     parent="android:TextAppearance.Material.Small" />
 
                 <style
-                    name="Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
-                    parent="android:TextAppearance.Material.Widget.PopupMenu.Small" />
+                    name="Base.Widget.AppCompat.ActionBar.TabText"
+                    parent="android:Widget.Material.ActionBar.TabText" />
 
                 <style
                     name="Base.TextAppearance.AppCompat.SearchResult.Subtitle"
@@ -11724,10 +11726,6 @@ middle
                     parent="android:TextAppearance.Material.Button" />
 
                 <style
-                    name="Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                    parent="android:TextAppearance.Material.Widget.ActionBar.Subtitle" />
-
-                <style
                     name="Base.ThemeOverlay.AppCompat.Light"
                     parent="android:ThemeOverlay.Material.Light" >
                     <item name="colorControlHighlight">
@@ -11739,6 +11737,10 @@ middle
 true
                     </item>
                 </style>
+
+                <style
+                    name="Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    parent="android:TextAppearance.Material.Widget.ActionBar.Subtitle" />
 
                 <style
                     name="Base.V21.Theme.AppCompat.Light.Dialog"
@@ -11835,12 +11837,12 @@ true
                 </style>
 
                 <style
-                    name="Base.TextAppearance.AppCompat.Widget.PopupMenu.Small"
-                    parent="android:TextAppearance.Material.Widget.PopupMenu.Small" />
-
-                <style
                     name="Base.Theme.AppCompat.Dialog"
                     parent="Base.V21.Theme.AppCompat.Dialog" />
+
+                <style
+                    name="Base.TextAppearance.AppCompat.Widget.PopupMenu.Small"
+                    parent="android:TextAppearance.Material.Widget.PopupMenu.Small" />
 
                 <style
                     name="Base.TextAppearance.AppCompat.Title"
@@ -11867,12 +11869,12 @@ true
                     parent="android:Widget.Material.Toolbar.Button.Navigation" />
 
                 <style
-                    name="Base.Widget.AppCompat.ActionButton"
-                    parent="android:Widget.Material.ActionButton" />
-
-                <style
                     name="Base.Theme.AppCompat.Light.Dialog"
                     parent="Base.V21.Theme.AppCompat.Light.Dialog" />
+
+                <style
+                    name="Base.Widget.AppCompat.ActionButton"
+                    parent="android:Widget.Material.ActionButton" />
 
                 <style
                     name="Base.TextAppearance.AppCompat.Inverse"
@@ -11980,6 +11982,10 @@ true
                     name="Base.Widget.AppCompat.DropDownItem.Spinner"
                     parent="android:Widget.Material.DropDownItem.Spinner" />
 
+                <style
+                    name="Base.Widget.AppCompat.Light.PopupMenu"
+                    parent="android:Widget.Material.Light.PopupMenu" />
+
                 <style name="Base.Widget.AppCompat.PopupMenu.Overflow" >
                     <item name="android:dropDownHorizontalOffset">
 -4dip
@@ -11990,12 +11996,16 @@ true
                 </style>
 
                 <style
-                    name="Base.Widget.AppCompat.Light.PopupMenu"
-                    parent="android:Widget.Material.Light.PopupMenu" />
-
-                <style
                     name="Base.Widget.AppCompat.Light.AutoCompleteTextView"
                     parent="android:Widget.Material.AutoCompleteTextView" />
+
+                <style
+                    name="Base.TextAppearance.AppCompat.Caption"
+                    parent="android:TextAppearance.Material.Caption" />
+
+                <style
+                    name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu"
+                    parent="android:TextAppearance.Material.Widget.ActionBar.Menu" />
 
                 <style
                     name="Platform.AppCompat.Light.Dialog"
@@ -12007,14 +12017,6 @@ true
 false
                     </item>
                 </style>
-
-                <style
-                    name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu"
-                    parent="android:TextAppearance.Material.Widget.ActionBar.Menu" />
-
-                <style
-                    name="Base.TextAppearance.AppCompat.Caption"
-                    parent="android:TextAppearance.Material.Caption" />
 
                 <style
                     name="Base.Widget.AppCompat.ListPopupWindow"
@@ -12029,10 +12031,6 @@ false
                     parent="android:TextAppearance.Material.Widget.ActionBar.Title.Inverse" />
 
                 <style
-                    name="Base.Widget.AppCompat.ActionBar.TabView"
-                    parent="android:Widget.Material.ActionBar.TabView" />
-
-                <style
                     name="Base.ThemeOverlay.AppCompat.Dark"
                     parent="android:ThemeOverlay.Material.Dark" >
                     <item name="colorControlHighlight">
@@ -12044,6 +12042,10 @@ false
 false
                     </item>
                 </style>
+
+                <style
+                    name="Base.Widget.AppCompat.ActionBar.TabView"
+                    parent="android:Widget.Material.ActionBar.TabView" />
 
                 <style
                     name="Base.TextAppearance.AppCompat.Subhead"
@@ -12180,15 +12182,15 @@ false
 false
                 </bool>
 
-                <integer name="abc_max_action_buttons" >
-5
-                </integer>
-
                 <item
                     name="dialog_fixed_height_major"
                     type="dimen">
 60%
                 </item>
+
+                <integer name="abc_max_action_buttons" >
+5
+                </integer>
             </file>
             <file
                 path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\res\values-xlarge-land\values.xml"
@@ -12252,12 +12254,12 @@ false
                     msgid="1594238315039666878" >"转到上一层级"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with_application"
-                    msgid="7165123711973476752" >"通过%s分享"
-                </string>
-                <string
                     name="abc_action_bar_home_description"
                     msgid="4600421777120114993" >"转到主屏幕"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with_application"
+                    msgid="7165123711973476752" >"通过%s分享"
                 </string>
             </file>
             <file
@@ -12444,12 +12446,12 @@ false
                     msgid="1397052879051804371" >"%1$s, %2$s"
                 </string>
                 <string
-                    name="abc_searchview_description_clear"
-                    msgid="3691816814315814921" >"Sula inkinga"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Hambisa umbuzo"
+                </string>
+                <string
+                    name="abc_searchview_description_clear"
+                    msgid="3691816814315814921" >"Sula inkinga"
                 </string>
             </file>
         </source>
@@ -12602,21 +12604,6 @@ false
                 qualifiers=""
                 type="layout" />
             <file
-                name="fragment_main"
-                path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\fragment_main.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_navigation_drawer"
-                path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\fragment_navigation_drawer.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="home"
-                path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\home.xml"
-                qualifiers=""
-                type="layout" />
-            <file
                 name="list_fragment"
                 path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\list_fragment.xml"
                 qualifiers=""
@@ -12629,11 +12616,6 @@ false
             <file
                 name="navigation_drawer_list_item"
                 path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\navigation_drawer_list_item.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="splash"
-                path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\splash.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -12689,15 +12671,13 @@ Delete
             <file
                 path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\values\strings.xml"
                 qualifiers="" >
-                <string name="action_settings" >Settings
-                </string>
                 <string name="navigation_drawer_title_list" >List
                 </string>
-                <string name="action_example" >Example action
+                <string name="action_settings" >Settings
                 </string>
                 <string name="navigation_drawer_close" >Close navigation drawer
                 </string>
-                <string name="navigation_drawer_title_main_menu" >Main Menu
+                <string name="action_example" >Example action
                 </string>
                 <string name="app_name" >MyMeds
                 </string>
@@ -12842,6 +12822,11 @@ f6
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
+            <file
+                name="fragment_navigation_drawer"
+                path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\src\main\res\layout\fragment_navigation_drawer.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Diogo\Documents\WIT\WIT Academy\Android\MyMeds\app\build\generated\res\generated\debug" />

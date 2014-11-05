@@ -112,7 +112,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
             String allDays = getAllDaysString(c);
             String hours = getHoursString(c);
             Integer iconId = Constants.iconIdMap.get(c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_ICON)));
-            if(iconId == null) {
+            if(iconId == null) { // If there's an error, use red icon by default
                 iconId = R.drawable.pills_red_icon;
             }
             String icon = Integer.toString(iconId);

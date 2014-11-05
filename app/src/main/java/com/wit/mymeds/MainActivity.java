@@ -16,8 +16,7 @@ import android.support.v7.app.ActionBarActivity;
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    public static final int MAIN_MENU_NAVIGATION_DRAWER_POSITION = 0;
-    public static final int LIST_NAVIGATION_DRAWER_POSITION = 1;
+    public static final int LIST_NAVIGATION_DRAWER_POSITION = 0;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -50,10 +49,6 @@ public class MainActivity extends ActionBarActivity
         Fragment f = null;
         ActionBar actionBar = getSupportActionBar();
         switch (position) {
-            case MAIN_MENU_NAVIGATION_DRAWER_POSITION:
-                f = MainMenuFragment.newInstance();
-                actionBar.setTitle("Main Menu");
-                break;
             case LIST_NAVIGATION_DRAWER_POSITION:
                 f = ListFragment.newInstance();
                 actionBar.setTitle("List");
@@ -66,9 +61,6 @@ public class MainActivity extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.navigation_drawer_title_main_menu);
-                break;
-            case 2:
                 mTitle = getString(R.string.navigation_drawer_title_list);
                 break;
         }
