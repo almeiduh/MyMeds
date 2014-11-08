@@ -20,8 +20,7 @@ import android.widget.Toast;
  * @author Diogo
  */
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks,
-                   SettingsFragment.OnFragmentInteractionListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     public static final int LIST_NAVIGATION_DRAWER_POSITION = 0;
     public static final int SETTINGS_NAVIGATION_DRAWER_POSITION = 1;
@@ -99,10 +98,5 @@ public class MainActivity extends ActionBarActivity
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle(mTitle);
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }
