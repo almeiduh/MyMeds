@@ -161,7 +161,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
     private void insertDbDummyValue(SQLiteDatabase db) {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(DbMedsEntry.COLUMN_NAME_MED_NAME, "Testinvalid");
+        values.put(DbMedsEntry.COLUMN_NAME_MED_NAME, "Yo YE");
         values.put(DbMedsEntry.COLUMN_NAME_MED_SUNDAY, 0);
         values.put(DbMedsEntry.COLUMN_NAME_MED_MONDAY, 1);
         values.put(DbMedsEntry.COLUMN_NAME_MED_TUESDAY, 0);
@@ -171,7 +171,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         values.put(DbMedsEntry.COLUMN_NAME_MED_SATURDAY, 1);
         values.put(DbMedsEntry.COLUMN_NAME_MED_START_HOUR, "TIME");
         values.put(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR, 6);
-        values.put(DbMedsEntry.COLUMN_NAME_MED_ICON, 4);
+        values.put(DbMedsEntry.COLUMN_NAME_MED_ICON, 2);
 
 
 // Insert the new row, returning the primary key value of the new row

@@ -1616,12 +1616,13 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int drawer_shadow=0x7f020033;
-        public static final int ic_drawer=0x7f020034;
-        public static final int ic_launcher=0x7f020035;
-        public static final int pills_blue_icon=0x7f020036;
-        public static final int pills_grey_icon=0x7f020037;
-        public static final int pills_red_icon=0x7f020038;
-        public static final int plus_icon=0x7f020039;
+        public static final int ic_action_new=0x7f020034;
+        public static final int ic_drawer=0x7f020035;
+        public static final int ic_launcher=0x7f020036;
+        public static final int pills_blue_icon=0x7f020037;
+        public static final int pills_grey_icon=0x7f020038;
+        public static final int pills_red_icon=0x7f020039;
+        public static final int plus_icon=0x7f02003a;
     }
     public static final class id {
         public static final int action_bar=0x7f090033;
@@ -1632,7 +1633,6 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f090021;
         public static final int action_bar_title=0x7f090020;
         public static final int action_context_bar=0x7f090034;
-        public static final int action_example=0x7f090049;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
         public static final int action_mode_bar=0x7f090030;
@@ -1640,6 +1640,7 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f090022;
         public static final int action_settings=0x7f090048;
         public static final int activity_chooser_view_content=0x7f090023;
+        public static final int add_med_button=0x7f090049;
         public static final int always=0x7f090016;
         public static final int beginning=0x7f090013;
         public static final int bottom=0x7f09001e;
@@ -1726,15 +1727,17 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030014;
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
-        public static final int activity_main=0x7f030017;
-        public static final int fragment_navigation_drawer=0x7f030018;
-        public static final int list_fragment=0x7f030019;
-        public static final int list_item_layout=0x7f03001a;
-        public static final int navigation_drawer_list_item=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int activity_add_new_med=0x7f030017;
+        public static final int activity_main=0x7f030018;
+        public static final int fragment_navigation_drawer=0x7f030019;
+        public static final int fragment_settings=0x7f03001a;
+        public static final int list_fragment=0x7f03001b;
+        public static final int list_item_layout=0x7f03001c;
+        public static final int navigation_drawer_list_item=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
-        public static final int global=0x7f0d0000;
+        public static final int add_new_med=0x7f0d0000;
         public static final int main=0x7f0d0001;
     }
     public static final class string {
@@ -1756,9 +1759,13 @@ containing a value of this type.
         public static final int action_example=0x7f0b000f;
         public static final int action_settings=0x7f0b0010;
         public static final int app_name=0x7f0b0011;
-        public static final int navigation_drawer_close=0x7f0b0012;
-        public static final int navigation_drawer_open=0x7f0b0013;
-        public static final int navigation_drawer_title_list=0x7f0b0014;
+        public static final int hello_blank_fragment=0x7f0b0012;
+        public static final int hello_world=0x7f0b0013;
+        public static final int navigation_drawer_close=0x7f0b0014;
+        public static final int navigation_drawer_open=0x7f0b0015;
+        public static final int navigation_drawer_title_list=0x7f0b0016;
+        public static final int navigation_drawer_title_settings=0x7f0b0017;
+        public static final int title_activity_add_new_med=0x7f0b0018;
     }
     public static final class style {
         /** 

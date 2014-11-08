@@ -101,7 +101,8 @@ public class NavigationDrawerFragment extends Fragment {
                 // android.R.layout.simple_list_item_1,
                 R.layout.navigation_drawer_list_item,
                 new String[]{
-                        getString(R.string.navigation_drawer_title_list)
+                        getString(R.string.navigation_drawer_title_list),
+                        getString(R.string.navigation_drawer_title_settings),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
@@ -247,7 +248,7 @@ public class NavigationDrawerFragment extends Fragment {
     private void showGlobalContextActionBar() {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        //actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setTitle(R.string.app_name);
     }
 

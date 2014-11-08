@@ -4,14 +4,10 @@
     tools:context="com.wit.mymeds.MainActivity" >
 
     <item
-        android:id="@+id/action_example"
-        android:title="@string/action_example"
-        app:showAsAction="withText|ifRoom"/>
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:id="@+id/add_med_button"
+        android:title="Add"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="always"/>
 
 </menu>
-<!-- From: file:/C:/Users/Diogo/Documents/WIT/WIT%20Academy/Android/MyMeds/app/src/main/res/menu/main.xml -->
+<!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/menu/main.xml -->
