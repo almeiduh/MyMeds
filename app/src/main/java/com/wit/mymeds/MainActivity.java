@@ -1,8 +1,6 @@
 package com.wit.mymeds;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +10,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 /**
  * Main Activity - This is the application's main activity.
@@ -63,7 +60,7 @@ public class MainActivity extends ActionBarActivity
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.add_med_button:
-                Intent intent = new Intent(this, AddNewMed.class);
+                Intent intent = new Intent(this, AddNewMedActivity.class);
                 startActivity(intent);
                 return true;
             default:

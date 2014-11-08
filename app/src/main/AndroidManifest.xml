@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddNewMed"
+            android:name=".AddNewMedActivity"
             android:label="@string/title_activity_add_new_med" >
         </activity>
     </application>

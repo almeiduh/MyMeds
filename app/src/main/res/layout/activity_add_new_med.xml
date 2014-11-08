@@ -6,11 +6,138 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.wit.mymeds.AddNewMed">
+    tools:context="com.wit.mymeds.AddNewMedActivity">
 
     <TextView
-        android:text="@string/hello_world"
+        android:text="@string/form_med_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:id="@+id/form_name_text"
+        android:layout_alignBottom="@+id/form_name_edit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingBottom="5dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/form_name_edit"
+        android:layout_toEndOf="@+id/form_name_text"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/form_name_text" />
+
+    <TextView
+        android:text="@string/form_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:id="@+id/textView"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_toStartOf="@+id/form_name_edit"
+        android:layout_below="@+id/form_name_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_sun"
+        android:id="@+id/sunCheckBox"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_mon"
+        android:id="@+id/monCheckBox"
+        android:checked="false"
+        android:layout_below="@+id/sunCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_tue"
+        android:id="@+id/tueCheckBox"
+        android:layout_below="@+id/monCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+    />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_wed"
+        android:id="@+id/wedCheckBox"
+        android:checked="false"
+        android:layout_below="@+id/tueCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_thu"
+        android:id="@+id/thuCheckBox"
+        android:layout_below="@+id/wedCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_fri"
+        android:id="@+id/friCheckBox"
+        android:checked="false"
+        android:layout_below="@+id/thuCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_days_sat"
+        android:id="@+id/satCheckBox"
+        android:checked="false"
+        android:layout_below="@+id/friCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/secondary_text_light"
+        />
+
+    <AnalogClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/analogClock"
+        android:layout_below="@+id/satCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp" />
 
 </RelativeLayout>

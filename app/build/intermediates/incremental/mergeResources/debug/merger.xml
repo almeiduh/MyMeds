@@ -12678,11 +12678,31 @@ Delete
                 qualifiers="" >
                 <string name="hello_world" >Hello world!
                 </string>
+                <string name="form_days_sun" >Sunday
+                </string>
+                <string name="form_days_mon" >Monday
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="form_med_name" >Name
+                </string>
+                <string name="app_name" >MyMeds
+                </string>
+                <string name="form_days_wed" >Wednesday
+                </string>
+                <string name="navigation_drawer_title_settings" >Settings
+                </string>
+                <string name="form_days" >Days
+                </string>
+                <string name="form_days_fri" >Friday
+                </string>
                 <string name="action_example" >Example action
                 </string>
                 <string name="title_activity_add_new_med" >Add new med
                 </string>
                 <string name="hello_blank_fragment" >Hello blank fragment
+                </string>
+                <string name="form_days_thu" >Thursday
                 </string>
                 <string name="navigation_drawer_title_list" >List
                 </string>
@@ -12708,13 +12728,11 @@ f6
                     </item>
                 </string-array>
 
-                <string name="action_settings" >Settings
-                </string>
-                <string name="app_name" >MyMeds
-                </string>
                 <string name="navigation_drawer_close" >Close navigation drawer
                 </string>
-                <string name="navigation_drawer_title_settings" >Settings
+                <string name="form_days_sat" >Saturday
+                </string>
+                <string name="form_days_tue" >Tuesday
                 </string>
                 <string name="navigation_drawer_open" >Open navigation drawer
                 </string>
@@ -12860,11 +12878,6 @@ f6
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\activity_add_new_med.xml"
                 qualifiers=""
                 type="layout" />
-            <file
-                name="add_new_med"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\menu\add_new_med.xml"
-                qualifiers=""
-                type="menu" />
             <file
                 name="fragment_settings"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_settings.xml"
