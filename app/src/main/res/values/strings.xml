@@ -33,4 +33,7 @@
     <string name="form_days_fri">Friday</string>
     <string name="form_days_sat">Saturday</string>
 
+    <string name="form_pick_time">Pick Hour</string>
+    <string name="form_time_text">00:00</string>
+
 </resources>

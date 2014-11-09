@@ -131,13 +131,29 @@
         android:textColor="@android:color/secondary_text_light"
         />
 
-    <AnalogClock
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/analogClock"
+        android:text="@string/form_pick_time"
+        android:onClick="showTimePickerDialog"
         android:layout_below="@+id/satCheckBox"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="49dp" />
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/button" />
+
+    <TextView
+        android:text="@string/form_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:id="@+id/form_time_text"
+        android:paddingBottom="5dp"
+        android:layout_toRightOf="@+id/sunCheckBox"
+        android:layout_toEndOf="@+id/sunCheckBox"
+        android:layout_alignBottom="@+id/button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp" />
 
 </RelativeLayout><!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/layout/activity_add_new_med.xml -->
