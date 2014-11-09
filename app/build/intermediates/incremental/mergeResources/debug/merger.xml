@@ -12676,6 +12676,26 @@ Delete
             <file
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\strings.xml"
                 qualifiers="" >
+                <string name="form_icon_title" >Icon
+                </string>
+                <string name="form_med_name" >Name
+                </string>
+                <string name="navigation_drawer_title_settings" >Settings
+                </string>
+                <string name="form_pick_time" >Pick Hour
+                </string>
+                <string name="title_activity_add_new_med" >Add new med
+                </string>
+                <string name="form_days_thu" >Thursday
+                </string>
+                <string name="navigation_drawer_title_list" >List
+                </string>
+                <string name="form_time_title" >First Notification Time
+                </string>
+                <string name="form_days_tue" >Tuesday
+                </string>
+                <string name="navigation_drawer_open" >Open navigation drawer
+                </string>
                 <string name="hello_world" >Hello world!
                 </string>
                 <string name="form_days_sun" >Sunday
@@ -12684,31 +12704,23 @@ Delete
                 </string>
                 <string name="action_settings" >Settings
                 </string>
-                <string name="form_med_name" >Name
-                </string>
                 <string name="app_name" >MyMeds
                 </string>
                 <string name="form_days_wed" >Wednesday
                 </string>
-                <string name="navigation_drawer_title_settings" >Settings
-                </string>
                 <string name="form_days" >Days
+                </string>
+                <string name="form_repeat_time_title" >Repeat every (hours)
                 </string>
                 <string name="form_days_fri" >Friday
                 </string>
-                <string name="form_pick_time" >Pick Hour
+                <string name="form_time_value" >0 hours
                 </string>
                 <string name="action_example" >Example action
-                </string>
-                <string name="title_activity_add_new_med" >Add new med
                 </string>
                 <string name="form_time_text" >00:00
                 </string>
                 <string name="hello_blank_fragment" >Hello blank fragment
-                </string>
-                <string name="form_days_thu" >Thursday
-                </string>
-                <string name="navigation_drawer_title_list" >List
                 </string>
 
                 <string-array name="os" >
@@ -12735,10 +12747,6 @@ f6
                 <string name="navigation_drawer_close" >Close navigation drawer
                 </string>
                 <string name="form_days_sat" >Saturday
-                </string>
-                <string name="form_days_tue" >Tuesday
-                </string>
-                <string name="navigation_drawer_open" >Open navigation drawer
                 </string>
             </file>
             <file
@@ -12892,6 +12900,18 @@ f6
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_time_picker.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\integers.xml"
+                qualifiers="" >
+                <integer name="max_repeat_time" >
+23
+                </integer>
+            </file>
+            <file
+                name="add_med"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\menu\add_med.xml"
+                qualifiers=""
+                type="menu" />
         </source>
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\generated\debug" />

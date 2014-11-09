@@ -1047,6 +1047,12 @@
     <item name="up" type="id"/>
 
     <integer name="abc_max_action_buttons">2</integer>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/integers.xml -->
+    <eat-comment />
+
+    <integer name="max_repeat_time">23</integer>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
+    <eat-comment />
 
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -1077,9 +1083,13 @@
     <string name="form_days_thu">Thursday</string>
     <string name="form_days_tue">Tuesday</string>
     <string name="form_days_wed">Wednesday</string>
+    <string name="form_icon_title">Icon</string>
     <string name="form_med_name">Name</string>
     <string name="form_pick_time">Pick Hour</string>
+    <string name="form_repeat_time_title">Repeat every (hours)</string>
     <string name="form_time_text">00:00</string>
+    <string name="form_time_title">First Notification Time</string>
+    <string name="form_time_value">0 hours</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

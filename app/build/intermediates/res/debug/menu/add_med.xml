@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.wit.mymeds.MainActivity" >
+
+    <item
+        android:id="@+id/add_med_button"
+        android:title="Save"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="always"/>
+
+</menu>
+<!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/menu/add_med.xml -->

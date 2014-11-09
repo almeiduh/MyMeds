@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.format.DateFormat;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -27,5 +28,8 @@ public class TimePickerFragment extends DialogFragment
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         ((TextView)getActivity().findViewById(R.id.form_time_text)).setText(hourOfDay + ":" + minute);
+
+        // change seek bar limit
+        ((SeekBar)getActivity().findViewById(R.id.seekBarRepeatHours)).setMax((23-hourOfDay));
     }
 }

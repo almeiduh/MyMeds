@@ -35,5 +35,9 @@
 
     <string name="form_pick_time">Pick Hour</string>
     <string name="form_time_text">00:00</string>
+    <string name="form_time_title">First Notification Time</string>
+    <string name="form_repeat_time_title">Repeat every (hours)</string>
+    <string name="form_time_value">0 hours</string>
+    <string name="form_icon_title">Icon</string>
 
 </resources>
