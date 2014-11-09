@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.wit.mymeds.utils.Constants;
+
 /**
  * Main Activity - This is the application's main activity.
  * Created by Diogo on 26-10-2014.
@@ -61,7 +63,7 @@ public class MainActivity extends ActionBarActivity
         switch (item.getItemId()) {
             case R.id.add_med_button:
                 Intent intent = new Intent(this, AddNewMedActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, Constants.ADD_MED_ACTIVITY);
                 return true;
             default:
                 return false;

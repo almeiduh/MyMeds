@@ -4,7 +4,7 @@
     tools:context="com.wit.mymeds.MainActivity" >
 
     <item
-        android:id="@+id/add_med_button"
+        android:id="@+id/save_med_button"
         android:title="Save"
         android:icon="@android:drawable/ic_menu_save"
         app:showAsAction="always"/>

@@ -1050,7 +1050,10 @@
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/integers.xml -->
     <eat-comment />
 
+    <integer name="blue_icon_id">2</integer>
+    <integer name="grey_icon_id">3</integer>
     <integer name="max_repeat_time">23</integer>
+    <integer name="red_icon_id">1</integer>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 

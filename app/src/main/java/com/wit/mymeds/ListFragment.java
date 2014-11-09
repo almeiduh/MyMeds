@@ -1,5 +1,6 @@
 package com.wit.mymeds;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,6 +8,7 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -59,24 +61,35 @@ public class ListFragment extends android.support.v4.app.ListFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.list_fragment, container, false);
+    public void onResume() {
+        super.onResume();
+
+        updateListData();
+    }
+
+    private void updateListData() {
+        Log.e("MYMEDS", "UPDATING LIST...");
 
         DbMedsHelper mDbHelper = new DbMedsHelper(getActivity());
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        insertDbDummyValue(db);
-// TODO - error when no values
         // TODO - fragment goes to main menu when device rotates
-        ListAdapter la = getListAdapter(db);
+        SimpleAdapter la = getListAdapter(db);
+        if (la != null ) {
+            this.setListAdapter(la);
+        }
+    }
 
-        this.setListAdapter(la);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.list_fragment, container, false);
 
         return view;
     }
 
-    private ListAdapter getListAdapter(SQLiteDatabase db) {
+    private SimpleAdapter getListAdapter(SQLiteDatabase db) {
+        list = new ArrayList<Map<String, String>>();
         String[] projection = {
                 DbMedsEntry._ID,
                 DbMedsEntry.COLUMN_NAME_MED_NAME,
@@ -105,30 +118,32 @@ public class ListFragment extends android.support.v4.app.ListFragment {
                 sortOrder                     // The sort order
         );
 
+        if (c.getCount() != 0) {
+            c.moveToFirst();
+            do {
+                String itemName = c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_NAME));
+                String allDays = getAllDaysString(c);
+                String hours = getHoursString(c);
+                Integer iconId = Constants.iconIdMap.get(c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_ICON)));
+                if (iconId == null) { // If there's an error, use red icon by default
+                    iconId = R.drawable.pills_red_icon;
+                }
+                String icon = Integer.toString(iconId);
+                list.add(putData(itemName, allDays, hours, icon));
 
-        c.moveToFirst();
-        do {
-            String itemName = c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_NAME));
-            String allDays = getAllDaysString(c);
-            String hours = getHoursString(c);
-            Integer iconId = Constants.iconIdMap.get(c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_ICON)));
-            if(iconId == null) { // If there's an error, use red icon by default
-                iconId = R.drawable.pills_red_icon;
-            }
-            String icon = Integer.toString(iconId);
-            list.add(putData(itemName, allDays, hours, icon));
+            } while (c.moveToNext());
 
-        } while(c.moveToNext());
-
-        return new SimpleAdapter(getActivity(), list, R.layout.list_item_layout, new String[] {LIST_ITEM_TITLE, LIST_ITEM_DESCRIPTION, LIST_ITEM_HOURS, LIST_ITEM_ICON } , new int[]{R.id.list_title, R.id.list_description, R.id.list_hours, R.id.list_icon} );
+            return new SimpleAdapter(getActivity(), list, R.layout.list_item_layout, new String[]{LIST_ITEM_TITLE, LIST_ITEM_DESCRIPTION, LIST_ITEM_HOURS, LIST_ITEM_ICON}, new int[]{R.id.list_title, R.id.list_description, R.id.list_hours, R.id.list_icon});
+        }
+        return null;
     }
 
     private String getHoursString(Cursor c) {
         StringBuilder sb = new StringBuilder();
         sb.append("Starting hour: ");
-        sb.append(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_START_HOUR));
+        sb.append(c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_START_HOUR)));
         sb.append("   Repeating every: ");
-        sb.append(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR));
+        sb.append(c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR)));
         sb.append(" hours");
         return sb.toString();
     }

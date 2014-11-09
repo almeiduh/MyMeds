@@ -10,11 +10,13 @@ import java.util.Map;
  */
 public class Constants {
 
+    public static final int ADD_MED_ACTIVITY = 777;
+
     public static final Map<Integer, Integer> iconIdMap = new HashMap<Integer, Integer>();
 
     static {
-        iconIdMap.put(1, R.drawable.pills_red_icon);
-        iconIdMap.put(2, R.drawable.pills_blue_icon);
-        iconIdMap.put(3, R.drawable.pills_grey_icon);
+        iconIdMap.put(R.integer.red_icon_id, R.drawable.pills_red_icon);
+        iconIdMap.put(R.integer.blue_icon_id, R.drawable.pills_blue_icon);
+        iconIdMap.put(R.integer.grey_icon_id, R.drawable.pills_grey_icon);
     }
 }

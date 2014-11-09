@@ -27,6 +27,10 @@
             android:name=".AddNewMedActivity"
             android:label="@string/title_activity_add_new_med" >
         </activity>
+
+        <service
+            android:name=".alarm.MyAlarmService">
+        </service>
     </application>
 
 </manifest>

@@ -12906,6 +12906,15 @@ f6
                 <integer name="max_repeat_time" >
 23
                 </integer>
+                <integer name="grey_icon_id" >
+3
+                </integer>
+                <integer name="red_icon_id" >
+1
+                </integer>
+                <integer name="blue_icon_id" >
+2
+                </integer>
             </file>
             <file
                 name="add_med"

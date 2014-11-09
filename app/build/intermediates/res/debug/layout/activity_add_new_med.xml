@@ -239,12 +239,14 @@
         android:orientation="vertical"
         android:layout_below="@+id/form_icon_title"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/radio_group_icon">
         <RadioButton android:id="@+id/radio_red_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/pills_red_icon"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:checked="true"/>
         <RadioButton android:id="@+id/radio_blue_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
