@@ -31,6 +31,14 @@
         <service
             android:name=".alarm.MyAlarmService">
         </service>
+
+        <receiver android:name=".alarm.AlarmReceiver">
+            <intent-filter>
+                <action android:name="123">
+                </action>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

@@ -30,6 +30,13 @@
 
         <service android:name="com.wit.mymeds.alarm.MyAlarmService" >
         </service>
+
+        <receiver android:name="com.wit.mymeds.alarm.AlarmReceiver" >
+            <intent-filter>
+                <action android:name="123" >
+                </action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

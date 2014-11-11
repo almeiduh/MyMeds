@@ -27,9 +27,19 @@ public class TimePickerFragment extends DialogFragment
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        ((TextView)getActivity().findViewById(R.id.form_time_text)).setText(hourOfDay + ":" + minute);
+        String stringHour = Integer.toString(hourOfDay);
+        String stringMin = Integer.toString(minute);
+        if(stringHour.length() == 1) {
+            stringHour = "0" + stringHour;
+        }
+
+        if(stringMin.length() == 1) {
+            stringMin = "0" + stringMin;
+        }
+
+        ((TextView)getActivity().findViewById(R.id.form_time_text)).setText(stringHour + ":" + stringMin);
 
         // change seek bar limit
-        ((SeekBar)getActivity().findViewById(R.id.seekBarRepeatHours)).setMax((23-hourOfDay));
+        //((SeekBar)getActivity().findViewById(R.id.seekBarRepeatHours)).setMax((23-hourOfDay));
     }
 }

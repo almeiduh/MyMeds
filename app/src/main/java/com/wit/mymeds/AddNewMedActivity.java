@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -26,12 +25,12 @@ import com.wit.mymeds.alarm.MyAlarmService;
 import com.wit.mymeds.db.DbMedsEntry;
 import com.wit.mymeds.db.DbMedsHelper;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class AddNewMedActivity extends ActionBarActivity {
-
-    private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,27 +142,90 @@ public class AddNewMedActivity extends ActionBarActivity {
             Toast.makeText(this, "An entry with the same name already exists", Toast.LENGTH_LONG).show();
         }
 
-        setupAlarm();
+        setupAlarm(medName, startHour, repeatTime, iconId,
+                isSunday, isMonday, isTuesday, isWednesday, isThursday, isFriday, isSaturday);
 
         // close this activity
         setResult(Activity.RESULT_OK);
         this.finish();
     }
 
-    private void setupAlarm() {
-        Intent myIntent = new Intent(AddNewMedActivity.this, MyAlarmService.class);
-        pendingIntent = PendingIntent.getService(AddNewMedActivity.this, 0, myIntent, 0);
+    private void setupAlarm(String medName, String startHour, long repeatTime, long iconId,
+                            boolean isSunday, boolean isMonday, boolean isTuesday,
+                            boolean isWednesday, boolean isThursday, boolean isFriday,
+                            boolean isSaturday) {
 
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        List<Integer> hoursList = new ArrayList<Integer>();
+
+        String[] hourMin = startHour.split(":");
+
+        int firstHour = Integer.valueOf(hourMin[0]);
+        int min  = Integer.valueOf(hourMin[1]);
+
+        if(repeatTime > 0) {
+            while (firstHour >= 0) {
+                firstHour -= repeatTime;
+            }
+
+            firstHour += repeatTime;
+
+            while (firstHour < 24) {
+                hoursList.add(firstHour);
+                firstHour += repeatTime;
+            }
+        } else {
+            hoursList.add(firstHour);
+        }
+
+        for(int hour : hoursList) {
+            setAlarmForWeekDay(medName, min, hour, iconId, isSunday, isMonday, isTuesday,
+                               isWednesday, isThursday, isFriday, isSaturday);
+        }
+    }
+
+    private void setAlarmForWeekDay(String medName, int min, int hour, long iconId,
+                                    boolean isSunday, boolean isMonday, boolean isTuesday,
+                                    boolean isWednesday, boolean isThursday, boolean isFriday,
+                                    boolean isSaturday) {
+        String stringHour = Integer.toString(hour);
+        String stringMin = Integer.toString(min);
+
+        if(stringHour.length() == 1) {
+            stringHour = "0" + stringHour;
+        }
+
+        if(stringMin.length() == 1) {
+            stringMin = "0" + stringMin;
+        }
+
+        String hourMinStr = stringHour + ":" + stringMin;
+
+        Intent myIntent = new Intent(AddNewMedActivity.this, MyAlarmService.class);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_NAME, medName);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_START_HOUR, hourMinStr);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_ICON_ID, iconId);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SUNDAY, isSunday);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_MONDAY, isMonday);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_TUESDAY, isTuesday);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_WEDNESDAY, isWednesday);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_THURSDAY, isThursday);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_FRIDAY, isFriday);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SATURDAY, isSaturday);
+
+        PendingIntent pendingIntent = PendingIntent.getService(AddNewMedActivity.this,
+                medName.hashCode() + hour + min,
+                myIntent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
         Calendar calendar = Calendar.getInstance();
 
-        calendar.setTimeInMillis(System.currentTimeMillis());
+        //calendar.set(Calendar.DAY_OF_WEEK, weekday);
+        calendar.set(Calendar.HOUR_OF_DAY, Integer.valueOf(hour));
+        calendar.set(Calendar.MINUTE, min);
 
-        calendar.add(Calendar.SECOND, 10);
-
-        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-
-        Toast.makeText(AddNewMedActivity.this, "Start Alarm", Toast.LENGTH_LONG).show();
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                24 * 60 * 60 * 1000, pendingIntent);
     }
 
     private boolean areAllFormFieldsValid() {

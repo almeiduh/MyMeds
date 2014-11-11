@@ -1,7 +1,13 @@
 package com.wit.mymeds.alarm;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Bundle;
 import android.os.IBinder;
 
 import android.app.Service;
@@ -10,18 +16,37 @@ import android.content.Intent;
 
 import android.os.IBinder;
 
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.widget.Toast;
 
+import com.wit.mymeds.AddNewMedActivity;
+import com.wit.mymeds.MainActivity;
+import com.wit.mymeds.R;
+import com.wit.mymeds.utils.Constants;
+
+import java.util.Calendar;
 
 
 public class MyAlarmService extends Service {
+
+    public static final String NOTIFICATION_MED_NAME = "NOTIFICATION_MED_NAME";
+    public static final String NOTIFICATION_MED_START_HOUR = "NOTIFICATION_MED_START_HOUR" ;
+    public static final String NOTIFICATION_MED_ICON_ID = "NOTIFICATION_MED_ICON_ID";
+    public static final String NOTIFICATION_IS_SUNDAY = "NOTIFICATION_IS_SUNDAY";
+    public static final String NOTIFICATION_IS_MONDAY = "NOTIFICATION_IS_MONDAY";
+    public static final String NOTIFICATION_IS_TUESDAY = "NOTIFICATION_IS_TUESDAY";
+    public static final String NOTIFICATION_IS_WEDNESDAY = "NOTIFICATION_IS_WEDNESDAY";
+    public static final String NOTIFICATION_IS_THURSDAY = "NOTIFICATION_IS_THURSDAY";
+    public static final String NOTIFICATION_IS_FRIDAY = "NOTIFICATION_IS_FRIDAY";
+    public static final String NOTIFICATION_IS_SATURDAY = "NOTIFICATION_IS_SATURDAY";
+
+    public static String NOTIFICATION_YES_ACTION = "NOTIFICATION_YES_ACTION";
 
     @Override
     public void onCreate() {
         Toast.makeText(this, "MyAlarmService.onCreate()", Toast.LENGTH_LONG).show();
     }
-
-
 
     @Override
 
@@ -41,15 +66,93 @@ public class MyAlarmService extends Service {
     }
 
 
-
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(this, "MyAlarmService.onStartCommand()", Toast.LENGTH_LONG).show();
 
-    public void onStart(Intent intent, int startId) {
-        super.onStart(intent, startId);
-        Toast.makeText(this, "MyAlarmService.onStart()", Toast.LENGTH_LONG).show();
+        Bundle extras = intent.getExtras();
+
+        String medName = extras.getString(NOTIFICATION_MED_NAME);
+        String startHour = extras.getString(NOTIFICATION_MED_START_HOUR);
+        int iconId  = (int) extras.getLong(NOTIFICATION_MED_ICON_ID);
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+
+        boolean isActiveToday = false;
+
+        switch(day) {
+            case 1:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_SUNDAY);
+                break;
+            case 2:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_MONDAY);
+                break;
+            case 3:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_TUESDAY);
+                break;
+            case 4:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_WEDNESDAY);
+                break;
+            case 5:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_THURSDAY);
+                break;
+            case 6:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_FRIDAY);
+                break;
+            case 7:
+                isActiveToday = extras.getBoolean(NOTIFICATION_IS_SATURDAY);
+                break;
+        }
+
+
+     if (isActiveToday) {
+
+         iconId = Constants.iconIdMap.get(iconId);
+
+         Intent yesReceive = new Intent();
+         yesReceive.setAction(NOTIFICATION_YES_ACTION);
+         PendingIntent pendingIntentYes = PendingIntent.getBroadcast(this, 0, yesReceive, 0);
+
+         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+         NotificationCompat.Builder mBuilder =
+                 new NotificationCompat.Builder(this)
+                         .setSmallIcon(iconId)
+                         .setContentTitle(medName)
+                         .setContentText(startHour)
+                         .setSound(soundUri)
+                         .setOngoing(true)
+                         .addAction(R.drawable.ic_action_accept, "OK", pendingIntentYes);
+
+
+         // Creates an explicit intent for an Activity in your app
+         Intent resultIntent = new Intent(this, MainActivity.class);
+
+         // The stack builder object will contain an artificial back stack for the
+         // started Activity.
+         // This ensures that navigating backward from the Activity leads out of
+         // your application to the Home screen.
+         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+
+         // Adds the back stack for the Intent (but not the Intent itself)
+         stackBuilder.addParentStack(MainActivity.class);
+
+         // Adds the Intent that starts the Activity to the top of the stack
+         stackBuilder.addNextIntent(resultIntent);
+         PendingIntent resultPendingIntent =
+                 stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+         mBuilder.setContentIntent(resultPendingIntent);
+         NotificationManager mNotificationManager =
+                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+         // mId allows you to update the notification later on.
+         mNotificationManager.notify(1, mBuilder.build());
+     } else {
+         Toast.makeText(this, "ALARM NOT ACTIVE FOR THIS DAY", Toast.LENGTH_LONG).show();
+     }
+        return super.onStartCommand(intent, flags, startId);
     }
-
-
 
     @Override
 
