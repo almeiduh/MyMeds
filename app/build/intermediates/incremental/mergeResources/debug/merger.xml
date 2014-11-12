@@ -12676,11 +12676,15 @@ Delete
             <file
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\strings.xml"
                 qualifiers="" >
+                <string name="list_repeating_hours" >h
+                </string>
                 <string name="form_icon_title" >Icon
                 </string>
                 <string name="form_med_name" >Name
                 </string>
                 <string name="navigation_drawer_title_settings" >Settings
+                </string>
+                <string name="list_repeating_every" >Repeating every:
                 </string>
                 <string name="form_pick_time" >Pick Hour
                 </string>
@@ -12747,6 +12751,10 @@ f6
                 <string name="navigation_drawer_close" >Close navigation drawer
                 </string>
                 <string name="form_days_sat" >Saturday
+                </string>
+                <string name="notification_description" >Please Take your medicine!
+                </string>
+                <string name="list_starting_hour" >Starting hour:
                 </string>
             </file>
             <file

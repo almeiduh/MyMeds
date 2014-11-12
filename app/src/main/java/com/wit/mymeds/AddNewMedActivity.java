@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,8 +26,11 @@ import com.wit.mymeds.alarm.MyAlarmService;
 import com.wit.mymeds.db.DbMedsEntry;
 import com.wit.mymeds.db.DbMedsHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -142,7 +146,7 @@ public class AddNewMedActivity extends ActionBarActivity {
             Toast.makeText(this, "An entry with the same name already exists", Toast.LENGTH_LONG).show();
         }
 
-        setupAlarm(medName, startHour, repeatTime, iconId,
+        setupAlarmEasy(medName, startHour, repeatTime, iconId,
                 isSunday, isMonday, isTuesday, isWednesday, isThursday, isFriday, isSaturday);
 
         // close this activity
@@ -150,6 +154,51 @@ public class AddNewMedActivity extends ActionBarActivity {
         this.finish();
     }
 
+    private void setupAlarmEasy(String medName, String startHour, long repeatTime, long iconId,
+                            boolean isSunday, boolean isMonday, boolean isTuesday,
+                            boolean isWednesday, boolean isThursday, boolean isFriday,
+                            boolean isSaturday) {
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("d MMM HH:mm");
+            Date startDate = sdf.parse(startHour);
+
+            Intent myIntent = new Intent(AddNewMedActivity.this, MyAlarmService.class);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_NAME, medName);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_ICON_ID, iconId);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SUNDAY, isSunday);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_MONDAY, isMonday);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_TUESDAY, isTuesday);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_WEDNESDAY, isWednesday);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_THURSDAY, isThursday);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_FRIDAY, isFriday);
+            myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SATURDAY, isSaturday);
+
+            PendingIntent pendingIntent = PendingIntent.getService(AddNewMedActivity.this,
+                    medName.hashCode(),
+                    myIntent, 0);
+
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+            Calendar calendar = Calendar.getInstance();
+
+            //calendar.set(Calendar.DAY_OF_WEEK, weekday);
+            calendar.set(Calendar.HOUR_OF_DAY, startDate.getHours());
+            calendar.set(Calendar.MINUTE, startDate.getMinutes());
+            calendar.set(Calendar.SECOND, 0);
+
+            Log.d(this.getLocalClassName(),"ALARM SET TO: " + calendar.getTime().toString());
+
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                    repeatTime
+                            //* 60
+                            *  60 * 1000, pendingIntent);
+
+        } catch (ParseException e) {
+            Log.e(this.getLocalClassName(), "ERROR PARSING DATE");
+        }
+    }
+/*
     private void setupAlarm(String medName, String startHour, long repeatTime, long iconId,
                             boolean isSunday, boolean isMonday, boolean isTuesday,
                             boolean isWednesday, boolean isThursday, boolean isFriday,
@@ -170,6 +219,7 @@ public class AddNewMedActivity extends ActionBarActivity {
             firstHour += repeatTime;
 
             while (firstHour < 24) {
+                Log.d(this.getLocalClassName(), "Adding hour:"+ firstHour);
                 hoursList.add(firstHour);
                 firstHour += repeatTime;
             }
@@ -178,12 +228,13 @@ public class AddNewMedActivity extends ActionBarActivity {
         }
 
         for(int hour : hoursList) {
-            setAlarmForWeekDay(medName, min, hour, iconId, isSunday, isMonday, isTuesday,
-                               isWednesday, isThursday, isFriday, isSaturday);
+            setAlarm(medName, min, hour, iconId, isSunday, isMonday, isTuesday,
+                    isWednesday, isThursday, isFriday, isSaturday);
         }
     }
-
-    private void setAlarmForWeekDay(String medName, int min, int hour, long iconId,
+*/
+    /*
+    private void setAlarm(String medName, int min, int hour, long iconId,
                                     boolean isSunday, boolean isMonday, boolean isTuesday,
                                     boolean isWednesday, boolean isThursday, boolean isFriday,
                                     boolean isSaturday) {
@@ -222,18 +273,33 @@ public class AddNewMedActivity extends ActionBarActivity {
         //calendar.set(Calendar.DAY_OF_WEEK, weekday);
         calendar.set(Calendar.HOUR_OF_DAY, Integer.valueOf(hour));
         calendar.set(Calendar.MINUTE, min);
+        calendar.set(Calendar.SECOND, 0);
+
+        Log.d(this.getLocalClassName(),"ALARM SET TO: " + calendar.getTime().toString());
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                 24 * 60 * 60 * 1000, pendingIntent);
     }
-
+*/
     private boolean areAllFormFieldsValid() {
         String medName = ((EditText)findViewById(R.id.form_name_edit)).getText().toString();
-        if(isNameValid(medName)) {
-            return true;
+        String time = ((TextView) findViewById(R.id.form_time_text)).getText().toString();
+
+        if(!isNameValid(medName)) {
+            Toast.makeText(this, "Invalid name", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        Toast.makeText(this, "Invalid name", Toast.LENGTH_SHORT).show();
-        return false;
+
+        if(!isTimeValid(time)){
+            Toast.makeText(this, "Invalid time", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean isTimeValid(String time) {
+        return !time.equals(getResources().getString(R.string.form_time_text));
     }
 
     private boolean isNameValid(String medName) {

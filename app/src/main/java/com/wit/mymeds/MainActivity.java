@@ -2,6 +2,7 @@ package com.wit.mymeds;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -82,6 +83,9 @@ public class MainActivity extends ActionBarActivity
                 actionBar.setTitle("List");
                 break;
             case SETTINGS_NAVIGATION_DRAWER_POSITION:
+                Intent i = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                super.startActivityForResult(i, 1001);
+
                 f = SettingsFragment.newInstance();
                 actionBar.setTitle("Settings");
                 break;

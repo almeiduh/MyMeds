@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -26,8 +27,6 @@ import java.util.Calendar;
 public class MyAlarmService extends Service {
 
     public static final String NOTIFICATION_MED_NAME = "NOTIFICATION_MED_NAME";
-    public static final String NOTIFICATION_MED_START_HOUR = "NOTIFICATION_MED_START_HOUR" ;
-    public static final String NOTIFICATION_MED_START_MIN = "NOTIFICATION_MED_START_MIN" ;
     public static final String NOTIFICATION_MED_ICON_ID = "NOTIFICATION_MED_ICON_ID";
     public static final String NOTIFICATION_IS_SUNDAY = "NOTIFICATION_IS_SUNDAY";
     public static final String NOTIFICATION_IS_MONDAY = "NOTIFICATION_IS_MONDAY";
@@ -65,19 +64,14 @@ public class MyAlarmService extends Service {
         Bundle extras = intent.getExtras();
 
         String medName = extras.getString(NOTIFICATION_MED_NAME);
-        String startHour = extras.getString(NOTIFICATION_MED_START_HOUR);
-        String startMin = extras.getString(NOTIFICATION_MED_START_MIN);
 
         int iconId  = (int) extras.getLong(NOTIFICATION_MED_ICON_ID);
 
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int min = calendar.get(Calendar.MINUTE);
 
         boolean isActiveToday = false;
 
-        if (Integer.valueOf(startHour) >= hour && Integer.valueOf(startMin) >= min) {
             switch (day) {
                 case 1:
                     isActiveToday = extras.getBoolean(NOTIFICATION_IS_SUNDAY);
@@ -101,7 +95,6 @@ public class MyAlarmService extends Service {
                     isActiveToday = extras.getBoolean(NOTIFICATION_IS_SATURDAY);
                     break;
             }
-        }
 
      if (isActiveToday) {
 
@@ -114,17 +107,18 @@ public class MyAlarmService extends Service {
          yesReceive.putExtra("NOTIFICATION_MED_NAME", medName);
          yesReceive.putExtra("NOTIFICATION_ID", notificationId);
 
-         PendingIntent pendingIntentYes = PendingIntent.getBroadcast(this, 0, yesReceive, 0);
+         Log.d(getClass().getName(), "Created Notification ID: " + notificationId);
+
+         PendingIntent pendingIntentYes = PendingIntent.getBroadcast(this, notificationId,
+                 yesReceive, 0);
 
          Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-         String hourMinStr = startHour + ":" + startMin;
 
          NotificationCompat.Builder mBuilder =
                  new NotificationCompat.Builder(this)
                          .setSmallIcon(iconId)
                          .setContentTitle(medName)
-                         .setContentText(hourMinStr)
+                         .setContentText(getResources().getString(R.string.notification_description))
                          .setSound(soundUri)
                          .setOngoing(true)
                          .addAction(R.drawable.ic_action_accept, "OK", pendingIntentYes);
@@ -153,7 +147,7 @@ public class MyAlarmService extends Service {
          // mId allows you to update the notification later on.
          mNotificationManager.notify(notificationId, mBuilder.build());
 
-         Log.d(getClass().getName(), "Notification ID: " + notificationId);
+         Log.d(getClass().getName(), "Created Notification ID: " + notificationId);
 
          // Add notification status to
          SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, 0);
@@ -191,7 +185,15 @@ public class MyAlarmService extends Service {
             SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, 0);
             boolean isNotificationActive = sharedPrefs.getBoolean(medName, false);
             if (isNotificationActive) {
-                Toast.makeText(getApplicationContext(), "NOW I WILL SEND AN SMS!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "SMS SENT!!", Toast.LENGTH_SHORT).show();
+                PendingIntent pi =
+                        PendingIntent.
+                                getActivity(getApplicationContext(),
+                                        0,
+                                        new Intent(getApplicationContext(), MyAlarmService.class),
+                                        0);
+                SmsManager sms = SmsManager.getDefault();
+                sms.sendTextMessage("+351966629905", null, "I didn't have my medicine! Help :'(", pi, null);
             }
         }
     }

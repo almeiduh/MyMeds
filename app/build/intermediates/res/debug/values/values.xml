@@ -1095,10 +1095,14 @@
     <string name="form_time_value">0 hours</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
+    <string name="list_repeating_every">Repeating every:</string>
+    <string name="list_repeating_hours">h</string>
+    <string name="list_starting_hour">Starting hour:</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_title_list">List</string>
     <string name="navigation_drawer_title_settings">Settings</string>
+    <string name="notification_description">Please Take your medicine!</string>
     <string name="title_activity_add_new_med">Add new med</string>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/styles.xml -->
     <eat-comment />

@@ -1803,11 +1803,15 @@ containing a value of this type.
         public static final int form_time_value=0x7f0b0020;
         public static final int hello_blank_fragment=0x7f0b0021;
         public static final int hello_world=0x7f0b0022;
-        public static final int navigation_drawer_close=0x7f0b0023;
-        public static final int navigation_drawer_open=0x7f0b0024;
-        public static final int navigation_drawer_title_list=0x7f0b0025;
-        public static final int navigation_drawer_title_settings=0x7f0b0026;
-        public static final int title_activity_add_new_med=0x7f0b0027;
+        public static final int list_repeating_every=0x7f0b0023;
+        public static final int list_repeating_hours=0x7f0b0024;
+        public static final int list_starting_hour=0x7f0b0025;
+        public static final int navigation_drawer_close=0x7f0b0026;
+        public static final int navigation_drawer_open=0x7f0b0027;
+        public static final int navigation_drawer_title_list=0x7f0b0028;
+        public static final int navigation_drawer_title_settings=0x7f0b0029;
+        public static final int notification_description=0x7f0b002a;
+        public static final int title_activity_add_new_med=0x7f0b002b;
     }
     public static final class style {
         /** 

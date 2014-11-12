@@ -1,8 +1,11 @@
 package com.wit.mymeds;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,6 +25,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wit.mymeds.alarm.MyAlarmService;
 import com.wit.mymeds.db.DbMedsEntry;
 import com.wit.mymeds.db.DbMedsHelper;
 import com.wit.mymeds.utils.Constants;
@@ -140,11 +144,12 @@ public class ListFragment extends android.support.v4.app.ListFragment {
 
     private String getHoursString(Cursor c) {
         StringBuilder sb = new StringBuilder();
-        sb.append("Starting hour: ");
+        sb.append(getResources().getString(R.string.list_starting_hour));
         sb.append(c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_START_HOUR)));
-        sb.append("   Repeating every: ");
+        sb.append("  ");
+        sb.append(getResources().getString(R.string.list_repeating_every));
         sb.append(c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR)));
-        sb.append(" hours");
+        sb.append(getResources().getString(R.string.list_repeating_hours));
         return sb.toString();
     }
 
@@ -260,9 +265,20 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         } else if(item.getItemId() == 1) { // Delete
             Toast.makeText(this.getActivity(), "Deleting..." + selectedMed, Toast.LENGTH_SHORT).show();
             if(db.delete(DbMedsEntry.TABLE_NAME, DbMedsEntry.COLUMN_NAME_MED_NAME + "='" + selectedMed +"'", null) > 0) {
-                Toast.makeText(this.getActivity(), "Deleted." + selectedMed, Toast.LENGTH_LONG).show();
+                Toast.makeText(this.getActivity(), selectedMed + " deleted", Toast.LENGTH_LONG).show();
                 list.remove(info.position);
                 getListView().invalidateViews();
+
+                Intent myIntent = new Intent(getActivity(), MyAlarmService.class);
+
+                PendingIntent pendingIntent = PendingIntent.getService(getActivity(),
+                        selectedMed.hashCode(),
+                        myIntent, 0);
+
+                AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(getActivity().ALARM_SERVICE);
+                alarmManager.cancel(pendingIntent);
+
+                Log.d("DELETING", "Alarms Canceled");
             }
 
         }

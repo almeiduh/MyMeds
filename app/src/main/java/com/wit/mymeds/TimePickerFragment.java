@@ -9,6 +9,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class TimePickerFragment extends DialogFragment
@@ -37,7 +38,13 @@ public class TimePickerFragment extends DialogFragment
             stringMin = "0" + stringMin;
         }
 
-        ((TextView)getActivity().findViewById(R.id.form_time_text)).setText(stringHour + ":" + stringMin);
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        cal.set(Calendar.MINUTE, minute);
+        cal.set(Calendar.SECOND, 0);
+        SimpleDateFormat sdf = new SimpleDateFormat("d MMM HH:mm");
+
+        ((TextView)getActivity().findViewById(R.id.form_time_text)).setText(sdf.format(cal.getTime()));
 
         // change seek bar limit
         //((SeekBar)getActivity().findViewById(R.id.seekBarRepeatHours)).setMax((23-hourOfDay));

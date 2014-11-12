@@ -23,7 +23,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             Log.d(getClass().getName(), "medName: " + medName);
 
             int notificationId = extras.getInt("NOTIFICATION_ID");
-            Log.d(getClass().getName(), "notificationId: " + notificationId);
+            Log.d(getClass().getName(), "Received notificationId: " + notificationId);
 
             NotificationManager notificationManager =
                     (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
