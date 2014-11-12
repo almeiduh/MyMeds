@@ -34,7 +34,7 @@
 
         <receiver android:name=".alarm.AlarmReceiver">
             <intent-filter>
-                <action android:name="123">
+                <action android:name="NOTIFICATION_YES_ACTION">
                 </action>
             </intent-filter>
         </receiver>

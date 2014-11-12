@@ -198,11 +198,10 @@ public class AddNewMedActivity extends ActionBarActivity {
             stringMin = "0" + stringMin;
         }
 
-        String hourMinStr = stringHour + ":" + stringMin;
-
         Intent myIntent = new Intent(AddNewMedActivity.this, MyAlarmService.class);
         myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_NAME, medName);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_START_HOUR, hourMinStr);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_START_HOUR, stringHour);
+        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_START_MIN, stringMin);
         myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_ICON_ID, iconId);
         myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SUNDAY, isSunday);
         myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_MONDAY, isMonday);
