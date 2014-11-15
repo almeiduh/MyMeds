@@ -57,5 +57,6 @@
     <string name="settings_sms_warning_sms_timeout_summary">Choose the SMS timeout</string>
     <string name="number_picker_dialog_title">Pick the Timeout time (min)</string>
     <string name="sms_message">MyMeds: I didn\'t take my medicine. Please check on me</string>
+    <string name="title_activity_edit_med">Edit Med</string>
 
 </resources>

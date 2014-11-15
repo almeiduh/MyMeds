@@ -1836,7 +1836,8 @@ containing a value of this type.
         public static final int sms_warning_enabled_settings_summary=0x7f0c0038;
         public static final int sms_warning_enabled_settings_title=0x7f0c0039;
         public static final int title_activity_add_new_med=0x7f0c003a;
-        public static final int title_activity_settings=0x7f0c003b;
+        public static final int title_activity_edit_med=0x7f0c003b;
+        public static final int title_activity_settings=0x7f0c003c;
     }
     public static final class style {
         /** 

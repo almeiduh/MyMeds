@@ -5,11 +5,12 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -25,6 +27,7 @@ import android.widget.Toast;
 import com.wit.mymeds.alarm.MyAlarmService;
 import com.wit.mymeds.db.DbMedsEntry;
 import com.wit.mymeds.db.DbMedsHelper;
+import com.wit.mymeds.utils.Constants;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,20 +35,108 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
-public class AddNewMedActivity extends ActionBarActivity {
+public class EditMedActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_med);
 
+        Intent intent = getIntent();
+        String oldMedName = intent.getExtras().getString("MEDNAME");
+
+        DbMedsHelper mDbHelper = new DbMedsHelper(getApplicationContext());
+
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List list = new ArrayList<Map<String, String>>();
+        String[] projection = {
+                DbMedsEntry._ID,
+                DbMedsEntry.COLUMN_NAME_MED_NAME,
+                DbMedsEntry.COLUMN_NAME_MED_SUNDAY,
+                DbMedsEntry.COLUMN_NAME_MED_MONDAY,
+                DbMedsEntry.COLUMN_NAME_MED_TUESDAY,
+                DbMedsEntry.COLUMN_NAME_MED_WEDNESDAY,
+                DbMedsEntry.COLUMN_NAME_MED_THURSDAY,
+                DbMedsEntry.COLUMN_NAME_MED_FRIDAY,
+                DbMedsEntry.COLUMN_NAME_MED_SATURDAY,
+                DbMedsEntry.COLUMN_NAME_MED_START_HOUR,
+                DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR,
+                DbMedsEntry.COLUMN_NAME_MED_ICON
+        };
+
+        String sortOrder =
+                DbMedsEntry.COLUMN_NAME_MED_NAME + " COLLATE NOCASE"; // Don't care about case
+
+        Cursor c = db.query(
+                DbMedsEntry.TABLE_NAME,  // The table to query
+                projection,              // The columns to return
+                DbMedsEntry.COLUMN_NAME_MED_NAME + " = '" + oldMedName +"'", // The columns for the WHERE clause
+                null,                    // The values for the WHERE clause
+                null,                    // don't group the rows
+                null,                    // don't filter by row groups
+                sortOrder                     // The sort order
+        );
+
+        if (c.getCount() != 0) {
+            c.moveToFirst();
+            do {
+                boolean isSunday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_SUNDAY)) == 1;
+                boolean isMonday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_MONDAY)) == 1;
+                boolean isTuesday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_TUESDAY)) == 1;
+                boolean isWednesday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_WEDNESDAY)) == 1;
+                boolean isThursday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_THURSDAY)) == 1;
+                boolean isFriday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_FRIDAY)) == 1;
+                boolean isSaturday = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_SATURDAY)) == 1;
+                String startHour = c.getString(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_START_HOUR));
+                int repeatTime = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_FREQUENCY_HOUR));
+                int iconId = c.getInt(c.getColumnIndexOrThrow(DbMedsEntry.COLUMN_NAME_MED_ICON));
+
+                // Update views
+                ((EditText)findViewById(R.id.form_name_edit)).setText(oldMedName);
+
+                if(isSunday)
+                    ((CheckBox)findViewById(R.id.sunCheckBox)).setChecked(true);
+                if(isMonday)
+                    ((CheckBox)findViewById(R.id.monCheckBox)).setChecked(true);
+                if(isTuesday)
+                    ((CheckBox)findViewById(R.id.tueCheckBox)).setChecked(true);
+                if(isWednesday)
+                    ((CheckBox)findViewById(R.id.wedCheckBox)).setChecked(true);
+                if(isThursday)
+                    ((CheckBox)findViewById(R.id.thuCheckBox)).setChecked(true);
+                if(isFriday)
+                    ((CheckBox)findViewById(R.id.friCheckBox)).setChecked(true);
+                if(isSaturday)
+                    ((CheckBox)findViewById(R.id.satCheckBox)).setChecked(true);
+
+                ((TextView)findViewById(R.id.form_time_text)).setText(startHour);
+                ((SeekBar)findViewById(R.id.seekBarRepeatHours)).setProgress(repeatTime-1);
+                ((TextView)findViewById(R.id.form_repeat_time_value)).setText(repeatTime + " hours");
+
+
+                switch(iconId) {
+                     case R.integer.red_icon_id:
+                         ((RadioButton)findViewById(R.id.radio_red_icon)).setChecked(true);
+                         break;
+                     case R.integer.blue_icon_id:
+                         ((RadioButton)findViewById(R.id.radio_blue_icon)).setChecked(true);
+                         break;
+                     case R.integer.grey_icon_id:
+                         ((RadioButton)findViewById(R.id.radio_grey_icon)).setChecked(true);
+                         break;
+                 }
+
+            } while (c.moveToNext());
+
+        }
+
+
         SeekBar seekBar = (SeekBar)findViewById(R.id.seekBarRepeatHours);
         final TextView seekBarValue = (TextView)findViewById(R.id.form_repeat_time_value);
-
-        seekBarValue.setText(getResources().getInteger(R.integer.min_repeat_time) +
-                " hours");
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -84,12 +175,35 @@ public class AddNewMedActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.save_med_button:
                 if(areAllFormFieldsValid()) {
-                    insertMedIntoDb();
+                    DbMedsHelper mDbHelper = new DbMedsHelper(getApplicationContext());
+                    SQLiteDatabase db = mDbHelper.getReadableDatabase();
+                    Intent intent = getIntent();
+                    String oldMedName = intent.getExtras().getString("MEDNAME");
+                    if(deleteMedFromDb(oldMedName, db)) {
+                        deleteMedAlarms(oldMedName);
+                        insertMedIntoDb();
+                    }
                 }
                 return true;
             default:
                 return false;
         }
+    }
+
+    private boolean deleteMedFromDb(String oldMedName, SQLiteDatabase db) {
+        return db.delete(DbMedsEntry.TABLE_NAME,
+                DbMedsEntry.COLUMN_NAME_MED_NAME + "='" + oldMedName + "'", null) > 0;
+    }
+
+    private void deleteMedAlarms(String oldMedName) {
+        Intent myIntent = new Intent(this, MyAlarmService.class);
+
+        PendingIntent pendingIntent = PendingIntent.getService(this,
+                oldMedName.hashCode(),
+                myIntent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
     }
 
     private void insertMedIntoDb() {
@@ -168,7 +282,7 @@ public class AddNewMedActivity extends ActionBarActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("d MMM HH:mm");
             Date startDate = sdf.parse(startHour);
 
-            Intent myIntent = new Intent(AddNewMedActivity.this, MyAlarmService.class);
+            Intent myIntent = new Intent(EditMedActivity.this, MyAlarmService.class);
             myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_NAME, medName);
             myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_ICON_ID, iconId);
             myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SUNDAY, isSunday);
@@ -179,7 +293,7 @@ public class AddNewMedActivity extends ActionBarActivity {
             myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_FRIDAY, isFriday);
             myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SATURDAY, isSaturday);
 
-            PendingIntent pendingIntent = PendingIntent.getService(AddNewMedActivity.this,
+            PendingIntent pendingIntent = PendingIntent.getService(EditMedActivity.this,
                     medName.hashCode(),
                     myIntent, 0);
 

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,8 +19,10 @@ import android.support.v4.view.ViewCompatKitKat;
 import android.support.v7.internal.view.menu.ActionMenuItemView;
 import android.support.v7.internal.widget.ViewUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
@@ -39,7 +42,6 @@ public class SettingsFragment extends PreferenceFragment {
         ActionMenuItemView item = (ActionMenuItemView) getActivity().findViewById(R.id.add_med_button);
         if(item != null)
             item.setVisibility(View.INVISIBLE);
-
 
         // SMS NUMBER
         Preference smsNumberPref= (Preference) findPreference("settings_sms_warning_sms_number");

@@ -77,7 +77,7 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         DbMedsHelper mDbHelper = new DbMedsHelper(getActivity());
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        // TODO - fragment goes to main menu when device rotates
+
         SimpleAdapter la = getListAdapter(db);
         if (la != null ) {
             this.setListAdapter(la);
@@ -261,7 +261,9 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         //list.remove();
 
         if(item.getItemId() == 0) { // Edit
-            
+            Intent intent = new Intent(getActivity(), EditMedActivity.class);
+            intent.putExtra("MEDNAME", selectedMed);
+            startActivityForResult(intent, Constants.EDIT_MED_ACTIVITY);
         } else if(item.getItemId() == 1) { // Delete
             Toast.makeText(this.getActivity(), "Deleting..." + selectedMed, Toast.LENGTH_SHORT).show();
             if(db.delete(DbMedsEntry.TABLE_NAME, DbMedsEntry.COLUMN_NAME_MED_NAME + "='" + selectedMed +"'", null) > 0) {

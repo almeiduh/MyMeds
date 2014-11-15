@@ -19,4 +19,6 @@ public class Constants {
         iconIdMap.put(R.integer.blue_icon_id, R.drawable.pills_blue_icon);
         iconIdMap.put(R.integer.grey_icon_id, R.drawable.pills_grey_icon);
     }
+
+    public static final int EDIT_MED_ACTIVITY = 888;
 }

@@ -1150,6 +1150,7 @@
     <string name="sms_warning_enabled_settings_summary">When enabled, a SMS is sent to the chosen number, if the medication is not taken after a timeout</string>
     <string name="sms_warning_enabled_settings_title">SMS Warning Enabled</string>
     <string name="title_activity_add_new_med">Add new med</string>
+    <string name="title_activity_edit_med">Edit Med</string>
     <string name="title_activity_settings">Settings</string>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/styles.xml -->
     <eat-comment />

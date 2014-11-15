@@ -551,7 +551,8 @@ int string sms_warning_category_settings_title 0x7f0c0037
 int string sms_warning_enabled_settings_summary 0x7f0c0038
 int string sms_warning_enabled_settings_title 0x7f0c0039
 int string title_activity_add_new_med 0x7f0c003a
-int string title_activity_settings 0x7f0c003b
+int string title_activity_edit_med 0x7f0c003b
+int string title_activity_settings 0x7f0c003c
 int style AppBaseTheme 0x7f0d0000
 int style AppTheme 0x7f0d0001
 int style Base_TextAppearance_AppCompat 0x7f0d0002

@@ -12802,6 +12802,8 @@ Delete
                 qualifiers="" >
                 <string name="list_repeating_hours" >h
                 </string>
+                <string name="title_activity_edit_med" >Edit Med
+                </string>
                 <string name="form_icon_title" >Icon
                 </string>
                 <string name="form_med_name" >Name
