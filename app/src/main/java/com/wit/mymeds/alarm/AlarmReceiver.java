@@ -32,7 +32,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 
             Log.d(this.getClass().getName(), "notification cleared");
 
-
             // Add notification status to
             SharedPreferences settings = context.getSharedPreferences(MyAlarmService.PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();

@@ -2,24 +2,18 @@
 <pre-dex-items>
 
     <item
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-adea200e915f1d25cd7105101e2724baf4cccd84.jar"
+        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4019ee50de732b1625cb0f81229a87b76ebfa754"/>
+    <item
         dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-6b6ebb85c5243724493854b0d97f1ce92db922ee.jar"
         jar="C:\Users\Diogo\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.0.1"
         sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
     <item
-        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-992db30d31d5d1078fba6b50bf39951e489259ab.jar"
-        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
-    <item
-        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-992db30d31d5d1078fba6b50bf39951e489259ab.jar"
-        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
-    <item
         dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-7e9043ea44f2f4a2281b744bb6948506edbd6a7e.jar"
         jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
         jumboMode="false"
@@ -43,6 +37,18 @@
         jumboMode="false"
         revision="21.1.1"
         sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-992db30d31d5d1078fba6b50bf39951e489259ab.jar"
+        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
+    <item
+        dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\classes-992db30d31d5d1078fba6b50bf39951e489259ab.jar"
+        jar="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
     <item
         dex="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-6b6ebb85c5243724493854b0d97f1ce92db922ee.jar"
         jar="C:\Users\Diogo\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"

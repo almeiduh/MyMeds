@@ -4,6 +4,9 @@
     <dataSet config="21.0.0" >
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\assets" />
     </dataSet>
+    <dataSet config="1.0.0" >
+        <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\assets" />
+    </dataSet>
     <dataSet config="21.0.0" >
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\assets" />
     </dataSet>

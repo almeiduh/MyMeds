@@ -1033,6 +1033,11 @@
     <eat-comment />
 
     <dimen name="navigation_drawer_width">240dp</dimen>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/android-support-v4-preferencefragment-master/1.0.0/res/values/values.xml -->
+    <eat-comment />
+
+    <dimen name="preference_fragment_padding_bottom">0dp</dimen>
+    <dimen name="preference_fragment_padding_side">16dp</dimen>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
 
@@ -1053,6 +1058,14 @@
     <integer name="blue_icon_id">2</integer>
     <integer name="grey_icon_id">3</integer>
     <integer name="max_repeat_time">23</integer>
+    <integer name="min_repeat_time">1</integer>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/android-support-v4-preferencefragment-master/1.0.0/res/values/values.xml -->
+    <eat-comment />
+
+    <integer name="preference_fragment_scrollbarStyle">0x02000000</integer>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/integers.xml -->
+    <eat-comment />
+
     <integer name="red_icon_id">1</integer>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/res/values/values.xml -->
     <eat-comment />
@@ -1078,6 +1091,13 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">MyMeds</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/android-support-v4-preferencefragment-master/1.0.0/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="back_button_label">Back</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="form_days">Days</string>
     <string name="form_days_fri">Friday</string>
     <string name="form_days_mon">Monday</string>
@@ -1102,8 +1122,35 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_title_list">List</string>
     <string name="navigation_drawer_title_settings">Settings</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/android-support-v4-preferencefragment-master/1.0.0/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="next_button_label">Next</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="notification_category_settings_title">Notifications</string>
     <string name="notification_description">Please Take your medicine!</string>
+    <string name="notification_enabled_settings_summary">Notifications reminders when it\'s time to take your meds</string>
+    <string name="notification_enabled_settings_title">Notifications Enabled</string>
+    <string name="number_picker_dialog_title">Pick the Timeout time (min)</string>
+    <string name="settings_sms_warning_sms_number_summary">Pick the destination phone number</string>
+    <string name="settings_sms_warning_sms_number_title">SMS Destination Number</string>
+    <string name="settings_sms_warning_sms_timeout_summary">Choose the SMS timeout</string>
+    <string name="settings_sms_warning_sms_timeout_title">Timeout for sending the SMS</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/android-support-v4-preferencefragment-master/1.0.0/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="skip_button_label">Skip</string>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="sms_message">MyMeds: I didn\'t take my medicine. Please check on me</string>
+    <string name="sms_warning_category_settings_title">SMS Warning</string>
+    <string name="sms_warning_enabled_settings_summary">When enabled, a SMS is sent to the chosen number, if the medication is not taken after a timeout</string>
+    <string name="sms_warning_enabled_settings_title">SMS Warning Enabled</string>
     <string name="title_activity_add_new_med">Add new med</string>
+    <string name="title_activity_settings">Settings</string>
     <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/src/main/res/values/styles.xml -->
     <eat-comment />
 

@@ -1,16 +1,21 @@
 package com.wit.mymeds;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.provider.Contacts;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.wit.mymeds.utils.Constants;
 
@@ -75,23 +80,20 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment f = null;
         ActionBar actionBar = getSupportActionBar();
         switch (position) {
             case LIST_NAVIGATION_DRAWER_POSITION:
-                f = ListFragment.newInstance();
+                Fragment f = ListFragment.newInstance();
+                fragmentManager.beginTransaction().replace(R.id.main_fragment_container, f).commit();
                 actionBar.setTitle("List");
                 break;
             case SETTINGS_NAVIGATION_DRAWER_POSITION:
-                Intent i = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                super.startActivityForResult(i, 1001);
-
-                f = SettingsFragment.newInstance();
+                SettingsFragment sf = new SettingsFragment();
+                fragmentManager.beginTransaction().replace(R.id.main_fragment_container, sf).commit();
                 actionBar.setTitle("Settings");
                 break;
         }
 
-        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, f).commit();
     }
 
     public void restoreActionBar() {
@@ -102,4 +104,5 @@ public class MainActivity extends ActionBarActivity
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle(mTitle);
     }
+
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/android-support-v4-preferencefragment-master/res/values-w720dp/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="preference_fragment_padding_side">32dp</dimen>
+
+</resources>

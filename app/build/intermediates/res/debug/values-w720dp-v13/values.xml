@@ -5,5 +5,9 @@
     <eat-comment />
 
     <bool name="abc_action_bar_expanded_action_views_exclusive">false</bool>
+    <!-- From: file:/C:/Users/Diogo/Documents/GitHub/MyMeds/app/build/intermediates/exploded-aar/com.android.support/android-support-v4-preferencefragment-master/1.0.0/res/values-w720dp-v13/values.xml -->
+    <eat-comment />
+
+    <dimen name="preference_fragment_padding_side">32dp</dimen>
 
 </resources>

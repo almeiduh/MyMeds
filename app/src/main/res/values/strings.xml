@@ -44,5 +44,18 @@
     <string name="list_repeating_every">Repeating every:</string>
     <string name="list_repeating_hours">h</string>
     <string name="notification_description">Please Take your medicine!</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="notification_enabled_settings_title">Notifications Enabled</string>
+    <string name="notification_enabled_settings_summary">Notifications reminders when it\'s time to take your meds</string>
+    <string name="notification_category_settings_title">Notifications</string>
+    <string name="sms_warning_category_settings_title">SMS Warning</string>
+    <string name="sms_warning_enabled_settings_title">SMS Warning Enabled</string>
+    <string name="sms_warning_enabled_settings_summary">When enabled, a SMS is sent to the chosen number, if the medication is not taken after a timeout</string>
+    <string name="settings_sms_warning_sms_number_summary">Pick the destination phone number</string>
+    <string name="settings_sms_warning_sms_number_title">SMS Destination Number</string>
+    <string name="settings_sms_warning_sms_timeout_title">Timeout for sending the SMS</string>
+    <string name="settings_sms_warning_sms_timeout_summary">Choose the SMS timeout</string>
+    <string name="number_picker_dialog_title">Pick the Timeout time (min)</string>
+    <string name="sms_message">MyMeds: I didn\'t take my medicine. Please check on me</string>
 
 </resources>

@@ -4,6 +4,51 @@
     <dataSet config="21.0.0" >
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\res" />
     </dataSet>
+    <dataSet config="1.0.0" >
+        <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\res" >
+            <file
+                name="preference_list_fragment"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\res\layout\preference_list_fragment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\res\values\values.xml"
+                qualifiers="" >
+                <string name="next_button_label" >Next
+                </string>
+
+                <dimen name="preference_fragment_padding_bottom" >0dp
+                </dimen>
+
+                <string name="skip_button_label" >Skip
+                </string>
+
+                <dimen name="preference_fragment_padding_side" >16dp
+                </dimen>
+
+                <string name="back_button_label" >Back
+                </string>
+
+                <integer name="preference_fragment_scrollbarStyle" >
+0x02000000
+                </integer>
+            </file>
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\res\values-sw320dp-v13\values.xml"
+                qualifiers="sw320dp-v13" >
+                <dimen name="preference_fragment_padding_side" >16dp
+                </dimen>
+                <dimen name="preference_fragment_padding_bottom" >0dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\android-support-v4-preferencefragment-master\1.0.0\res\values-w720dp-v13\values.xml"
+                qualifiers="w720dp-v13" >
+                <dimen name="preference_fragment_padding_side" >32dp
+                </dimen>
+            </file>
+        </source>
+    </dataSet>
     <dataSet config="21.0.0" >
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\res" >
             <file
@@ -12469,6 +12514,16 @@ false
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="ic_action_accept"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-hdpi\ic_action_accept.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-hdpi\ic_action_new.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_drawer"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-hdpi\ic_drawer.png"
                 qualifiers="hdpi-v4"
@@ -12501,6 +12556,16 @@ false
             <file
                 name="drawer_shadow"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\drawer_shadow.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_accept"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\ic_action_accept.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\ic_action_new.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
@@ -12539,6 +12604,16 @@ false
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_action_accept"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xhdpi\ic_action_accept.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xhdpi\ic_action_new.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_drawer"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xhdpi\ic_drawer.png"
                 qualifiers="xhdpi-v4"
@@ -12574,6 +12649,16 @@ false
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_action_accept"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\ic_action_accept.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\ic_action_new.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_drawer"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\ic_drawer.png"
                 qualifiers="xxhdpi-v4"
@@ -12604,6 +12689,11 @@ false
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
+                name="activity_add_new_med"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\activity_add_new_med.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_main"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\activity_main.xml"
                 qualifiers=""
@@ -12611,6 +12701,16 @@ false
             <file
                 name="fragment_navigation_drawer"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_navigation_drawer.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_settings"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_settings.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_time_picker"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_time_picker.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -12628,6 +12728,11 @@ false
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\navigation_drawer_list_item.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="add_med"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\menu\add_med.xml"
+                qualifiers=""
+                type="menu" />
             <file
                 name="main"
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\menu\main.xml"
@@ -12674,6 +12779,25 @@ Delete
                 </dimen>
             </file>
             <file
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\integers.xml"
+                qualifiers="" >
+                <integer name="max_repeat_time" >
+23
+                </integer>
+                <integer name="min_repeat_time" >
+1
+                </integer>
+                <integer name="grey_icon_id" >
+3
+                </integer>
+                <integer name="red_icon_id" >
+1
+                </integer>
+                <integer name="blue_icon_id" >
+2
+                </integer>
+            </file>
+            <file
                 path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\strings.xml"
                 qualifiers="" >
                 <string name="list_repeating_hours" >h
@@ -12682,7 +12806,15 @@ Delete
                 </string>
                 <string name="form_med_name" >Name
                 </string>
+                <string name="notification_enabled_settings_title" >Notifications Enabled
+                </string>
+                <string name="number_picker_dialog_title" >Pick the Timeout time (min)
+                </string>
+                <string name="sms_warning_enabled_settings_title" >SMS Warning Enabled
+                </string>
                 <string name="navigation_drawer_title_settings" >Settings
+                </string>
+                <string name="title_activity_settings" >Settings
                 </string>
                 <string name="list_repeating_every" >Repeating every:
                 </string>
@@ -12696,15 +12828,27 @@ Delete
                 </string>
                 <string name="form_time_title" >First Notification Time
                 </string>
+                <string name="settings_sms_warning_sms_timeout_title" >Timeout for sending the SMS
+                </string>
+                <string name="notification_enabled_settings_summary" >Notifications reminders when it\'s time to take your meds
+                </string>
                 <string name="form_days_tue" >Tuesday
+                </string>
+                <string name="sms_warning_category_settings_title" >SMS Warning
+                </string>
+                <string name="settings_sms_warning_sms_timeout_summary" >Choose the SMS timeout
                 </string>
                 <string name="navigation_drawer_open" >Open navigation drawer
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
+                <string name="settings_sms_warning_sms_number_summary" >Pick the destination phone number
+                </string>
                 <string name="form_days_sun" >Sunday
                 </string>
                 <string name="form_days_mon" >Monday
+                </string>
+                <string name="notification_category_settings_title" >Notifications
                 </string>
                 <string name="action_settings" >Settings
                 </string>
@@ -12716,6 +12860,8 @@ Delete
                 </string>
                 <string name="form_repeat_time_title" >Repeat every (hours)
                 </string>
+                <string name="sms_warning_enabled_settings_summary" >When enabled, a SMS is sent to the chosen number, if the medication is not taken after a timeout
+                </string>
                 <string name="form_days_fri" >Friday
                 </string>
                 <string name="form_time_value" >0 hours
@@ -12723,6 +12869,8 @@ Delete
                 <string name="action_example" >Example action
                 </string>
                 <string name="form_time_text" >00:00
+                </string>
+                <string name="sms_message" >MyMeds: I didn\'t take my medicine. Please check on me
                 </string>
                 <string name="hello_blank_fragment" >Hello blank fragment
                 </string>
@@ -12748,6 +12896,8 @@ f6
                     </item>
                 </string-array>
 
+                <string name="settings_sms_warning_sms_number_title" >SMS Destination Number
+                </string>
                 <string name="navigation_drawer_close" >Close navigation drawer
                 </string>
                 <string name="form_days_sat" >Saturday
@@ -12874,81 +13024,10 @@ f6
                 </dimen>
             </file>
             <file
-                name="ic_action_new"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\ic_action_new.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-hdpi\ic_action_new.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xhdpi\ic_action_new.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\ic_action_new.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="activity_add_new_med"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\activity_add_new_med.xml"
+                name="preferences"
+                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\xml\preferences.xml"
                 qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_settings"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_settings.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_time_picker"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\layout\fragment_time_picker.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\values\integers.xml"
-                qualifiers="" >
-                <integer name="max_repeat_time" >
-23
-                </integer>
-                <integer name="grey_icon_id" >
-3
-                </integer>
-                <integer name="red_icon_id" >
-1
-                </integer>
-                <integer name="blue_icon_id" >
-2
-                </integer>
-            </file>
-            <file
-                name="add_med"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\menu\add_med.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="ic_action_accept"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-hdpi\ic_action_accept.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-mdpi\ic_action_accept.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xhdpi\ic_action_accept.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\src\main\res\drawable-xxhdpi\ic_action_accept.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
+                type="xml" />
         </source>
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Diogo\Documents\GitHub\MyMeds\app\build\generated\res\generated\debug" />

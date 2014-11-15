@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer name="min_repeat_time">1</integer>
     <integer name="max_repeat_time">23</integer>
     <integer name="red_icon_id">1</integer>
     <integer name="blue_icon_id">2</integer>

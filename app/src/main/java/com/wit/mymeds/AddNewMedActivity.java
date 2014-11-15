@@ -44,10 +44,14 @@ public class AddNewMedActivity extends ActionBarActivity {
         SeekBar seekBar = (SeekBar)findViewById(R.id.seekBarRepeatHours);
         final TextView seekBarValue = (TextView)findViewById(R.id.form_repeat_time_value);
 
+        seekBarValue.setText(getResources().getInteger(R.integer.min_repeat_time) +
+                " hours");
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBarValue.setText(progress + " hours");
+                seekBarValue.setText(progress +
+                        getResources().getInteger(R.integer.min_repeat_time) + " hours");
             }
 
             @Override
@@ -106,7 +110,8 @@ public class AddNewMedActivity extends ActionBarActivity {
 
         String startHour = ((TextView)findViewById(R.id.form_time_text)).getText().toString();
 
-        int repeatTime = ((SeekBar)findViewById(R.id.seekBarRepeatHours)).getProgress();
+        int repeatTime = ((SeekBar)findViewById(R.id.seekBarRepeatHours)).getProgress() +
+                getResources().getInteger(R.integer.min_repeat_time);
 
         int iconId = R.integer.red_icon_id;
         RadioGroup radioGroup = ((RadioGroup) findViewById(R.id.radio_group_icon));
@@ -191,96 +196,14 @@ public class AddNewMedActivity extends ActionBarActivity {
 
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                     repeatTime
-                            //* 60
-                            *  60 * 1000, pendingIntent);
+                            * 60
+                            * 60 * 1000, pendingIntent);
 
         } catch (ParseException e) {
             Log.e(this.getLocalClassName(), "ERROR PARSING DATE");
         }
     }
-/*
-    private void setupAlarm(String medName, String startHour, long repeatTime, long iconId,
-                            boolean isSunday, boolean isMonday, boolean isTuesday,
-                            boolean isWednesday, boolean isThursday, boolean isFriday,
-                            boolean isSaturday) {
 
-        List<Integer> hoursList = new ArrayList<Integer>();
-
-        String[] hourMin = startHour.split(":");
-
-        int firstHour = Integer.valueOf(hourMin[0]);
-        int min  = Integer.valueOf(hourMin[1]);
-
-        if(repeatTime > 0) {
-            while (firstHour >= 0) {
-                firstHour -= repeatTime;
-            }
-
-            firstHour += repeatTime;
-
-            while (firstHour < 24) {
-                Log.d(this.getLocalClassName(), "Adding hour:"+ firstHour);
-                hoursList.add(firstHour);
-                firstHour += repeatTime;
-            }
-        } else {
-            hoursList.add(firstHour);
-        }
-
-        for(int hour : hoursList) {
-            setAlarm(medName, min, hour, iconId, isSunday, isMonday, isTuesday,
-                    isWednesday, isThursday, isFriday, isSaturday);
-        }
-    }
-*/
-    /*
-    private void setAlarm(String medName, int min, int hour, long iconId,
-                                    boolean isSunday, boolean isMonday, boolean isTuesday,
-                                    boolean isWednesday, boolean isThursday, boolean isFriday,
-                                    boolean isSaturday) {
-        String stringHour = Integer.toString(hour);
-        String stringMin = Integer.toString(min);
-
-        if(stringHour.length() == 1) {
-            stringHour = "0" + stringHour;
-        }
-
-        if(stringMin.length() == 1) {
-            stringMin = "0" + stringMin;
-        }
-
-        Intent myIntent = new Intent(AddNewMedActivity.this, MyAlarmService.class);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_NAME, medName);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_START_HOUR, stringHour);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_START_MIN, stringMin);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_MED_ICON_ID, iconId);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SUNDAY, isSunday);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_MONDAY, isMonday);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_TUESDAY, isTuesday);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_WEDNESDAY, isWednesday);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_THURSDAY, isThursday);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_FRIDAY, isFriday);
-        myIntent.putExtra(MyAlarmService.NOTIFICATION_IS_SATURDAY, isSaturday);
-
-        PendingIntent pendingIntent = PendingIntent.getService(AddNewMedActivity.this,
-                medName.hashCode() + hour + min,
-                myIntent, 0);
-
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
-        Calendar calendar = Calendar.getInstance();
-
-        //calendar.set(Calendar.DAY_OF_WEEK, weekday);
-        calendar.set(Calendar.HOUR_OF_DAY, Integer.valueOf(hour));
-        calendar.set(Calendar.MINUTE, min);
-        calendar.set(Calendar.SECOND, 0);
-
-        Log.d(this.getLocalClassName(),"ALARM SET TO: " + calendar.getTime().toString());
-
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                24 * 60 * 60 * 1000, pendingIntent);
-    }
-*/
     private boolean areAllFormFieldsValid() {
         String medName = ((EditText)findViewById(R.id.form_name_edit)).getText().toString();
         String time = ((TextView) findViewById(R.id.form_time_text)).getText().toString();
@@ -295,7 +218,24 @@ public class AddNewMedActivity extends ActionBarActivity {
             return false;
         }
 
+        if(!isWeekDays()){
+            Toast.makeText(this, "You must select at least one week day", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         return true;
+    }
+
+    private boolean isWeekDays() {
+        boolean isSunday = ((CheckBox)findViewById(R.id.sunCheckBox)).isChecked();
+        boolean isMonday = ((CheckBox)findViewById(R.id.monCheckBox)).isChecked();
+        boolean isTuesday = ((CheckBox)findViewById(R.id.tueCheckBox)).isChecked();
+        boolean isWednesday = ((CheckBox)findViewById(R.id.wedCheckBox)).isChecked();
+        boolean isThursday = ((CheckBox)findViewById(R.id.thuCheckBox)).isChecked();
+        boolean isFriday = ((CheckBox)findViewById(R.id.friCheckBox)).isChecked();
+        boolean isSaturday = ((CheckBox)findViewById(R.id.satCheckBox)).isChecked();
+
+        return isSunday | isMonday | isTuesday | isWednesday | isThursday | isFriday | isSaturday;
     }
 
     private boolean isTimeValid(String time) {
@@ -308,4 +248,5 @@ public class AddNewMedActivity extends ActionBarActivity {
 
         return false;
     }
+
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+    <PreferenceCategory
+        android:title="@string/notification_category_settings_title"
+        android:key="settings_notifications_category">
+        <CheckBoxPreference
+            android:key="settings_notification_enabled"
+            android:title="@string/notification_enabled_settings_title"
+            android:summary="@string/notification_enabled_settings_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/sms_warning_category_settings_title"
+        android:key="settings_sms_warning_category"
+        android:dependency="settings_notification_enabled">
+        <CheckBoxPreference
+            android:key="settings_sms_warning_enabled"
+            android:title="@string/sms_warning_enabled_settings_title"
+            android:summary="@string/sms_warning_enabled_settings_summary"
+            android:defaultValue="false" />
+        <Preference
+            android:key="settings_sms_warning_sms_number"
+            android:dependency="settings_sms_warning_enabled"
+            android:summary="@string/settings_sms_warning_sms_number_summary"
+            android:title="@string/settings_sms_warning_sms_number_title"/>
+        <Preference
+            android:key="settings_sms_warning_sms_timeout"
+            android:dependency="settings_sms_warning_enabled"
+            android:summary="@string/settings_sms_warning_sms_timeout_summary"
+            android:title="@string/settings_sms_warning_sms_timeout_title"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
